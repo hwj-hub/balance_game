@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6b4cf6">
+<title>밸런스 게임 · 질문 265개로 커플 궁합·친구와 링크 비교·모임 진행·직접 만들기 (무료)</title>
+<meta name="description" content="설치·가입 없이 휴대폰과 PC에서 바로 하는 무료 밸런스 게임입니다. 연애·커플, 음식, 일상·친구, 직장·회식, 상상·초능력, 돈·인생, 순한맛, 매운맛(극악) 8가지 주제의 밸런스 게임 질문 265개 가운데 둘 중 하나를 고르고, 다 풀면 링크로 친구에게 보내 몇 % 통하는지 비교합니다. 한 휴대폰으로 둘이 번갈아 고르는 커플 궁합, 회식·MT·교실에서 손 든 사람을 세는 모임 진행, 우리끼리 질문을 직접 만들어 링크로 보내기까지 됩니다.">
+<meta property="og:title" content="밸런스 게임 · 둘 중 하나만! 커플·친구 궁합과 모임용 질문 265개">
+<meta property="og:description" content="부먹 vs 찍먹부터 극악 난이도까지 8가지 주제 265문제. 다 풀고 링크를 보내면 친구와 몇 % 같은지, 둘이 한 폰으로 하면 궁합이, 모임에서는 손 든 사람 수가 나와요. 질문 직접 만들기도 무료.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hwj-hub.github.io/balance_game/">
+<!-- 링크 미리보기 그림: 스크래퍼는 절대 주소만 읽으므로 배포 주소로 적는다. 그림은 make_thumbnail.py 가 만든 og-image.png(1200×630) -->
+<meta property="og:image" content="https://hwj-hub.github.io/balance_game/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="밸런스 게임 — 분홍 A 「부어 먹는다」와 파랑 B 「찍어 먹는다」 카드 사이에 제목과 「질문 265개 · 링크로 도전장 · 모임 진행」, 오른쪽 위에 둘이 73% 통한 결과 카드">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="밸런스 게임 · 둘 중 하나만! 질문 265개">
+<meta name="twitter:description" content="다 풀고 링크로 친구와 비교, 한 폰으로 커플 궁합, 모임 손들기 집계, 질문 직접 만들기까지 설치 없이.">
+<meta name="twitter:image" content="https://hwj-hub.github.io/balance_game/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236b4cf6'/%3E%3Crect x='14' y='26' width='32' height='48' rx='9' fill='%23ff5c7a'/%3E%3Crect x='54' y='26' width='32' height='48' rx='9' fill='%2348a0ff'/%3E%3Ctext x='50' y='59' font-size='17' font-weight='900' text-anchor='middle' fill='%23fff' font-family='Arial'%3EVS%3C/text%3E%3C/svg%3E">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  color-scheme:light dark;
+  --bg:#f3f2fa; --card:#fff; --card2:#f4f3fb; --fg:#17142b; --muted:#5d5975; --line:#e0ddee;
+  --accent:#6b4cf6; --accent2:#9a7bff; --afg:#fff;
+  --ca:#f0436a; --ca2:#ff7a8f; --cb:#2f7cf6; --cb2:#5fa8ff;
+  --ok:#0b7f57; --okbg:#e2f4ec;
+  --warn:#b45309; --warnbg:#fdf2e3; --danger:#cf3128; --dangerbg:#fdebe9;
+  --shadow:0 1px 2px rgba(23,20,43,.05),0 8px 24px -14px rgba(23,20,43,.32);
+  --r:16px;
+}
+@media (prefers-color-scheme:dark){
+ :root{
+  --bg:#0d0b17; --card:#171426; --card2:#120f20; --fg:#ece9f8; --muted:#a39fbd; --line:#2a2643;
+  --accent:#a48dff; --accent2:#c3b3ff; --afg:#150f33;
+  --ca:#e23b62; --ca2:#ff6f88; --cb:#2a6fe0; --cb2:#4f96f5;
+  --ok:#34d399; --okbg:#0b2a21;
+  --warn:#fbbf24; --warnbg:#2b2210; --danger:#ff7b72; --dangerbg:#3a1614;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -16px rgba(0,0,0,.85);
+ }
+}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);line-height:1.55;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo",Roboto,sans-serif;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:1280px;margin:0 auto;padding:0 14px calc(40px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit}
+input,textarea{font:inherit;color:inherit}
+.hide{display:none !important}
+.nw{white-space:nowrap}
+.center{text-align:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ══ 광고 슬롯 ══ 자리만 비워 두고 화면 폭에 맞는 크기를 AD 가 채운다.
+   크기를 미리 잡아 두어 광고가 늦게 떠도 화면이 밀리지 않는다(애드핏: 광고 공간은 고정되어야 함) */
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:10px auto;max-width:100%}
+.ad-top{width:320px;height:50px;max-width:100%}
+.ad-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border:1px dashed var(--line);
+  border-radius:8px;background:var(--card2);color:var(--muted);font-size:11px;letter-spacing:.08em;font-weight:600}
+.ad-lab{display:block;text-align:center;font-size:9.5px;font-weight:700;letter-spacing:.14em;color:var(--muted);opacity:.7;margin:12px 0 -4px}
+body.no-ad .ad-slot,.ad-none{display:none !important}
+/* PC 옆 칸 맨 위 320×50 (좁은 화면에서는 숨긴다) */
+@media (max-width:979px){#ad-side{display:none}}
+@media (min-width:980px){#ad-side{margin:14px auto 0}}
+
+/* ── 앱 안(네이버·카카오 WebView) 안내 띠 ── 이미지 저장(내려받기)이 막히는 경우가 많다 */
+.iabar{display:none;align-items:center;gap:10px;margin:10px 0 0;padding:11px 12px;border-radius:12px;
+  background:var(--warnbg);border:1px solid color-mix(in srgb,var(--warn) 34%,transparent);line-height:1.5}
+body.inapp .iabar{display:flex}
+.iabar .ia-t{flex:1 1 auto;min-width:0;font-size:12.5px;font-weight:700;color:var(--fg)}
+.iabar .ia-t small{display:block;font-size:11.5px;font-weight:600;color:var(--muted);margin-top:2px}
+.iabar .ia-go{flex:0 0 auto;font:inherit;font-size:12.5px;font-weight:800;color:#fff;border:0;border-radius:999px;
+  padding:9px 14px;min-height:38px;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+@media (prefers-color-scheme:dark){.iabar .ia-go{color:var(--afg)}}
+.iabar .ia-x{flex:0 0 auto;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:transparent;
+  color:var(--muted);font:inherit;font-size:12px;line-height:1;cursor:pointer}
+
+/* ── 하단 오버형 ── 콘텐츠를 가리지 않도록 본문 아래 여백을 같이 늘린다(애드핏: 콘텐츠를 덮는 배치 금지).
+   게임 화면·결과 카드·질문 만들기가 보이는 동안에는 띄우지 않는다 */
+#anchor{position:fixed;left:0;right:0;bottom:0;z-index:45;display:flex;align-items:center;justify-content:center;
+  background:var(--card);border-top:1px solid var(--line);box-shadow:0 -8px 22px -14px rgba(0,0,0,.55);
+  padding:8px 4px calc(8px + env(safe-area-inset-bottom));transform:translateY(120%);
+  visibility:hidden;pointer-events:none;transition:transform .22s,visibility 0s linear .22s}
+#anchor.on{transform:none;visibility:visible;pointer-events:auto;transition:transform .22s,visibility 0s}
+#anchor .ad-slot{margin:0}
+#anchor .amk{position:absolute;left:10px;top:-11px;font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--muted);
+  background:var(--card);border:1px solid var(--line);border-radius:5px;padding:0 5px;line-height:15px}
+/* 닫기는 광고 영역 밖에 둔다 — 광고 안에 닫기 버튼을 넣는 것은 금지(오클릭 방지) */
+#anchor .axl{position:absolute;right:6px;top:-38px;width:36px;height:36px;border-radius:50%;cursor:pointer;
+  border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:13px;line-height:1;box-shadow:var(--shadow)}
+#anchor .axl::before{content:'';position:absolute;inset:-6px}
+body.anch .wrap{padding-bottom:calc(124px + env(safe-area-inset-bottom))}
+body.anch #toast{bottom:calc(118px + env(safe-area-inset-bottom))}
+@media (min-width:980px){#anchor{display:none}}
+
+/* ── 결과 카드 ── 화면을 덮지 않고 흐름 안에 펼친다 */
+#doneCard{border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+#doneCard .ad-lab{margin-top:16px}
+.dmsg{margin:0 0 10px;font-size:14px;font-weight:700;line-height:1.6}
+.dsteps{margin:0;padding:0 0 0 20px;font-size:13px;font-weight:600;line-height:1.75;color:var(--muted)}
+.dsteps b{color:var(--fg);font-weight:800}
+#doneImg{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;margin:10px 0 0}
+.dimgnote{font-size:11.5px;font-weight:600;color:var(--muted);margin:6px 0 0;text-align:center}
+
+/* ── 배치 ── 휴대폰: 게임 → 결과 카드 · 최근 결과 → 만들기 → 질문 모음 → 설명
+                PC: 왼쪽 게임 · 만들기 · 모음 · 설명, 오른쪽 옆 칸 */
+.layout{display:flex;flex-direction:column}
+.colm{display:contents}
+#gameCard{order:1}
+.side{order:2}
+#makeCard{order:3}
+#listCard{order:4}
+.l-info{order:5}
+.pc-only{display:none}
+@media (min-width:980px){
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:0 16px;align-items:start}
+  .colm{display:block}
+  .side{position:sticky;top:8px;max-height:calc(100vh - 16px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:0 2px 2px}
+  .side .card{margin-top:12px}
+  .pc-only{display:block}
+}
+
+header{text-align:center;padding:14px 0 2px}
+.logo{display:inline-flex;align-items:center;gap:9px;font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0}
+.logo .ico{width:36px;height:34px;border-radius:10px;display:flex;gap:3px;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+.logo .ico i{font-style:normal;width:13px;height:20px;border-radius:4px;display:grid;place-items:center;font-size:10px;font-weight:900;color:#fff;line-height:1}
+.logo .ico i:first-child{background:#ff5c7a}
+.logo .ico i:last-child{background:#48a0ff}
+.tag{font-size:14.5px;font-weight:600;color:var(--muted);margin:7px 0 0;text-wrap:balance}
+.tag b{color:var(--fg)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:9px}
+.badge{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--okbg);color:var(--ok)}
+.badge.gray{background:var(--card2);color:var(--muted);border:1px solid var(--line)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;margin-top:14px}
+.card h2{font-size:12px;font-weight:800;color:var(--muted);margin:0 0 12px;letter-spacing:.07em;
+  display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.card h2 .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;margin-right:6px;
+  background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);letter-spacing:0;font-size:11.5px}
+.card h2 .hint{font-size:11.5px;font-weight:700;letter-spacing:0;color:var(--muted)}
+.card h3{font-size:15px;font-weight:800;margin:18px 0 8px;letter-spacing:-.01em}
+.card p.tx{font-size:13.5px;color:var(--muted);line-height:1.8;margin:0 0 10px}
+.card p.tx b{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--card2);
+  font-size:13.5px;font-weight:800;padding:8px 12px;border-radius:12px;cursor:pointer;min-height:46px;transition:.12s;text-decoration:none;color:var(--fg)}
+.btn:hover{border-color:var(--accent)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.45;cursor:default;transform:none}
+.btn.pri{border-color:transparent;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:var(--shadow)}
+@media (prefers-color-scheme:dark){.btn.pri{color:var(--afg)}}
+.btn.sm{min-height:36px;padding:4px 12px;font-size:12.5px;letter-spacing:0}
+.btn.ghost{background:transparent}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btns .btn{flex:1 1 140px}
+.small{font-size:12px;font-weight:600;color:var(--muted);line-height:1.65;margin:8px 0 0}
+.small b{color:var(--fg)}
+.fld{display:flex;flex-direction:column;gap:5px;min-width:0}
+.fld>span{font-size:12px;font-weight:800;color:var(--muted)}
+.fld input,.fld textarea{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--card2);
+  padding:10px 12px;font-size:16px;font-weight:600;outline:none}
+.fld textarea{min-height:110px;resize:vertical;line-height:1.6}
+.fld input:focus,.fld textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.fld.full{margin-bottom:10px}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13px;font-weight:600;color:var(--muted);margin:12px 0 0;cursor:pointer;line-height:1.5;min-height:28px}
+.chk input{flex:0 0 auto;width:20px;height:20px;margin:0;accent-color:var(--accent)}
+.chk b{color:var(--fg)}
+
+/* ══ 고르기 전 화면 ══ */
+.gcard{padding:16px;position:relative}
+.gcard .scr{display:none}
+.gcard[data-scr=setup] #scrSetup,.gcard[data-scr=play] #scrPlay,.gcard[data-scr=result] #scrResult{display:block}
+.sblk{margin-bottom:18px}
+.modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mode{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;border:2px solid var(--line);background:var(--card2);
+  border-radius:14px;padding:12px 8px;cursor:pointer;min-height:110px;transition:.12s}
+.mode .mi{font-size:24px;line-height:1.2}
+.mode b{font-size:14.5px;font-weight:800;letter-spacing:-.02em}
+.mode small{font-size:11.5px;font-weight:600;color:var(--muted);line-height:1.45}
+.mode[aria-checked=true]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--card))}
+.mode[aria-checked=true] b{color:var(--accent)}
+.mopt{display:none;margin-top:12px;padding:12px;border-radius:12px;background:var(--card2);border:1px solid var(--line)}
+.gcard[data-mode=pair] #optPair,.gcard[data-mode=party] #optParty{display:block}
+.names{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:end}
+.names .heart{font-size:18px;padding-bottom:12px}
+.orow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.olab{font-size:12.5px;font-weight:800;color:var(--muted)}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:12px;background:var(--card2);border:1px solid var(--line);flex-wrap:wrap}
+.mopt .seg{background:var(--card)}
+.seg button{border:0;background:transparent;border-radius:9px;min-height:40px;min-width:52px;padding:4px 10px;font-weight:800;font-size:13.5px;cursor:pointer;color:var(--muted)}
+.seg button[aria-checked=true]{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
+@media (prefers-color-scheme:dark){.seg button[aria-checked=true]{color:var(--afg)}}
+.seg.wide{display:flex}
+.seg.wide button{flex:1 1 0}
+.cats{display:flex;flex-wrap:wrap;gap:6px}
+.cat{display:inline-flex;align-items:center;gap:5px;border:1.5px solid var(--line);background:var(--card2);border-radius:999px;
+  padding:6px 12px;min-height:42px;font-size:13.5px;font-weight:800;cursor:pointer;color:var(--muted)}
+.cat small{font-size:11px;font-weight:700;opacity:.8}
+.cat[aria-pressed=true]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--card));color:var(--fg)}
+.cat[aria-pressed=true]::after{content:'✓';color:var(--accent);font-weight:900;margin-left:1px}
+.cat.all{border-style:dashed}
+.btn.go{display:flex;width:100%;min-height:56px;font-size:17px;border-radius:14px;margin-top:4px}
+.recv{border:2px solid color-mix(in srgb,var(--accent) 45%,var(--line));background:color-mix(in srgb,var(--accent) 8%,var(--card));
+  border-radius:14px;padding:14px;margin-bottom:16px}
+.recv .rv-t{font-size:16.5px;font-weight:800;margin:0 0 4px;letter-spacing:-.02em}
+.recv .rv-s{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 10px;line-height:1.65}
+.recv .rv-s b{color:var(--fg)}
+.recv .fld{margin-bottom:10px}
+.recv .rv-x{background:none;border:0;color:var(--muted);font-size:12.5px;font-weight:700;text-decoration:underline;cursor:pointer;padding:10px 4px;min-height:40px}
+.gcard[data-recv=chal] #blkMode,.gcard[data-recv=chal] #blkCat,.gcard[data-recv=chal] #blkCount,.gcard[data-recv=chal] #btnStart,.gcard[data-recv=chal] #setupNote{display:none}
+.gcard[data-recv=set] #blkCat,.gcard[data-recv=set] #blkCount{display:none}
+
+/* ══ 고르는 화면 ══ */
+.pl-top{display:flex;align-items:center;gap:8px;min-height:36px}
+.pl-cat{font-size:12.5px;font-weight:800;color:var(--muted);flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pl-num{font-size:14px;font-weight:900;font-variant-numeric:tabular-nums;color:var(--accent)}
+.pbar{height:6px;border-radius:3px;background:var(--card2);border:1px solid var(--line);overflow:hidden;margin:8px 0 0}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .25s}
+.timer{position:relative;height:26px;border-radius:13px;background:var(--card2);border:1px solid var(--line);overflow:hidden;margin:10px 0 0}
+.timer i{position:absolute;left:0;top:0;bottom:0;width:100%;background:color-mix(in srgb,var(--warn) 30%,transparent)}
+.timer span{position:relative;display:block;text-align:center;font-size:13px;font-weight:900;line-height:24px;font-variant-numeric:tabular-nums}
+.timer.end{border-color:var(--danger)}
+.timer.end span{color:var(--danger)}
+.who{margin:12px auto 0;text-align:center;font-size:15px;font-weight:800}
+.who .wn{display:inline-block;padding:4px 14px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.pq{margin:14px 0 12px;text-align:center;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.45;min-height:25px;text-wrap:balance}
+.choices{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.ch{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:132px;padding:22px 16px 18px;
+  border:0;border-radius:18px;cursor:pointer;color:#fff;text-align:center;box-shadow:var(--shadow);
+  touch-action:manipulation;user-select:none;-webkit-user-select:none;transition:transform .12s,opacity .2s,box-shadow .2s}
+.ch.ca{background:linear-gradient(135deg,var(--ca),var(--ca2))}
+.ch.cb{background:linear-gradient(135deg,var(--cb),var(--cb2))}
+.ch:active{transform:scale(.98)}
+.ch:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.ch .cl{position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+  font-size:13px;font-weight:900;background:rgba(255,255,255,.24)}
+.ch .ct{font-size:20px;font-weight:900;letter-spacing:-.02em;line-height:1.38;text-wrap:balance;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.ch .cm{font-size:13px;font-weight:800;min-height:0;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.ch .cm:empty{display:none}
+.ch .cm .pk{display:inline-block;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#1a1630}
+.ch .cm .cnt{font-size:30px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+.choices.picked .ch{opacity:.42}
+.choices.picked .ch.pick{opacity:1;box-shadow:0 0 0 4px var(--card),0 0 0 7px var(--fg)}
+.choices.reveal .ch{opacity:1}
+.choices.reveal .ch.none{opacity:.38}
+.choices.ro .ch{cursor:default}
+.vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;background:var(--card);color:var(--fg);font-size:14px;font-weight:900;letter-spacing:.02em;
+  border:3px solid var(--bg);box-shadow:var(--shadow);pointer-events:none}
+.tminus{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+.thint{font-size:11.5px;font-weight:700;color:var(--muted);text-align:center}
+.verdict{margin:14px 0 0;text-align:center;font-size:19px;font-weight:900;letter-spacing:-.02em}
+.verdict.same{color:var(--ok)}
+.verdict.diff{color:var(--warn)}
+.pl-foot{display:flex;gap:8px;margin-top:14px}
+.pl-foot .btn{flex:1 1 0;min-width:0;padding:8px 6px}
+.pl-foot .btn.pri{flex:2 1 0}
+.quit{margin-top:12px;padding:12px;border-radius:12px;background:var(--card2);border:1px solid var(--line)}
+.quit p{margin:0;font-size:13.5px;font-weight:700;text-align:center}
+.cover{position:absolute;inset:0;z-index:5;border-radius:var(--r);background:var(--card);display:flex;align-items:center;justify-content:center;padding:20px}
+.cv-in{max-width:340px;width:100%;text-align:center}
+.cv-ic{font-size:44px;line-height:1}
+.cv-t{font-size:20px;font-weight:900;margin:12px 0 4px;letter-spacing:-.02em}
+.cv-s{font-size:13.5px;font-weight:600;color:var(--muted);margin:0 0 18px}
+@media (min-width:640px){
+  .choices{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+  .ch{min-height:220px}
+  .ch .ct{font-size:23px}
+}
+/* 크게 보기 — 질문만 화면 가득(TV·빔프로젝터). 전체 화면을 못 쓰는 기기는 CSS 로 채운다 */
+.gcard.big{position:fixed;inset:0;z-index:200;margin:0;border-radius:0;border:0;overflow:auto;display:flex;flex-direction:column;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top)) max(18px,3vw) max(18px,env(safe-area-inset-bottom))}
+.gcard.big #scrPlay{max-width:1400px;width:100%;margin:0 auto}
+.gcard.big .pq{font-size:clamp(20px,3.6vw,46px);margin:2vh 0}
+.gcard.big .ch{min-height:min(52vh,560px)}
+.gcard.big .ch .ct{font-size:clamp(24px,4.4vw,64px)}
+.gcard.big .ch .cm .cnt{font-size:clamp(34px,5vw,72px)}
+.gcard.big .vs{width:clamp(46px,6vw,84px);height:clamp(46px,6vw,84px);font-size:clamp(14px,1.8vw,26px)}
+.gcard.big .pl-num{font-size:clamp(14px,1.6vw,24px)}
+.gcard.big .who{font-size:clamp(15px,2vw,28px)}
+.gcard.big .verdict{font-size:clamp(19px,2.6vw,38px)}
+.gcard.big .cover{border-radius:0}
+body.bigm{overflow:hidden}
+.gcard:fullscreen{background:var(--card)}
+
+/* ══ 결과 ══ */
+.rhead{text-align:center;padding:4px 0 8px}
+.rhead .rt{font-size:21px;font-weight:900;letter-spacing:-.03em;margin:4px 0 4px;line-height:1.35}
+.rhead .rs{font-size:13.5px;font-weight:700;color:var(--muted);margin:0;line-height:1.6}
+.rhead .rs b{color:var(--fg)}
+.rhead .from{display:inline-block;font-size:12px;font-weight:800;padding:3px 12px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);margin-bottom:6px}
+.meter{--p:0;position:relative;width:168px;height:168px;margin:6px auto 4px;border-radius:50%;
+  background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--card2) 0);display:grid;place-items:center}
+.meter::before{content:'';position:absolute;inset:14px;border-radius:50%;background:var(--card)}
+.meter b{position:relative;font-size:44px;font-weight:900;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+.meter b small{font-size:20px;margin-left:1px}
+.meter span{position:absolute;bottom:40px;left:0;right:0;text-align:center;font-size:11.5px;font-weight:800;color:var(--muted)}
+.pairn{display:flex;justify-content:center;align-items:center;gap:8px;font-size:15px;font-weight:800;margin:4px 0}
+.pairn .p1{color:var(--ca)} .pairn .p2{color:var(--cb)}
+.rstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 0}
+.rst{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:8px 10px;text-align:center;min-width:0}
+.rst span{display:block;font-size:11px;font-weight:800;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rst b{display:block;font-size:20px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1.3}
+.rst.a b{color:var(--ca)} .rst.b b{color:var(--cb)}
+.share{margin:14px 0 4px;padding:14px;border-radius:14px;border:2px dashed color-mix(in srgb,var(--accent) 50%,var(--line));background:color-mix(in srgb,var(--accent) 6%,var(--card))}
+.share .sh-t{font-size:15.5px;font-weight:900;margin:0 0 4px;letter-spacing:-.02em}
+.share .sh-s{font-size:12.5px;font-weight:600;color:var(--muted);margin:0 0 10px;line-height:1.65}
+.share .sh-s b{color:var(--fg)}
+.share .fld{margin-bottom:10px}
+.share .btns{margin-top:0}
+.hl{display:grid;gap:8px;margin:12px 0 0}
+.hl div{padding:10px 12px;border-radius:12px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:700;line-height:1.55}
+.hl div b{display:block;font-size:11.5px;color:var(--muted);font-weight:800;margin-bottom:2px}
+.rh{font-size:13px !important;color:var(--muted);margin:16px 0 6px !important}
+.rlist{list-style:none;margin:0;padding:0}
+.rlist li{padding:10px 0;border-top:1px solid var(--line)}
+.rlist li:first-child{border-top:0}
+.rq{display:flex;gap:6px;align-items:baseline;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:5px}
+.rq .no{flex:0 0 auto;font-variant-numeric:tabular-nums;color:var(--accent);font-weight:900}
+.rq .mk{margin-left:auto;flex:0 0 auto;font-size:11.5px;font-weight:900;padding:1px 8px;border-radius:999px}
+.rq .mk.same{background:var(--okbg);color:var(--ok)}
+.rq .mk.diff{background:var(--warnbg);color:var(--warn)}
+.ro2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
+.op{position:relative;border-radius:10px;padding:7px 9px;font-size:13px;font-weight:700;line-height:1.45;background:var(--card2);border:1px solid var(--line);color:var(--muted);min-width:0}
+.op.on.a{background:color-mix(in srgb,var(--ca) 14%,var(--card));border-color:color-mix(in srgb,var(--ca) 55%,transparent);color:var(--fg)}
+.op.on.b{background:color-mix(in srgb,var(--cb) 14%,var(--card));border-color:color-mix(in srgb,var(--cb) 55%,transparent);color:var(--fg)}
+.op .tg{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
+.op .tg i{font-style:normal;font-size:10.5px;font-weight:900;padding:0 7px;border-radius:999px;line-height:17px;color:#fff}
+.op .tg i.t1{background:var(--ca)} .op .tg i.t2{background:var(--cb)} .op .tg i.t0{background:var(--accent)}
+.op .bar{height:6px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.op .bar i{display:block;height:100%}
+.op.a .bar i{background:var(--ca)} .op.b .bar i{background:var(--cb)}
+.op .cn{float:right;font-weight:900;color:var(--fg);font-variant-numeric:tabular-nums;margin-left:6px}
+.rlist.mini li{padding:7px 0}
+.rlist.mini .op{font-size:12px;padding:5px 7px}
+.empty{font-size:13px;font-weight:600;color:var(--muted);text-align:center;padding:14px 6px;margin:0}
+
+/* ── 최근 결과 ── */
+.hist{list-style:none;margin:0;padding:0}
+.hist li{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.hist li:first-child{border-top:0}
+.hist .hi{flex:0 0 auto;font-size:18px}
+.hist .ht{flex:1 1 auto;min-width:0;font-size:13px;font-weight:800;line-height:1.4}
+.hist .ht small{display:block;font-size:11.5px;font-weight:600;color:var(--muted)}
+.hist .btn{flex:0 0 auto}
+
+/* ══ 질문 만들기 ══ */
+.mk-rows{display:grid;gap:8px}
+.mk-row{display:grid;grid-template-columns:24px minmax(0,1fr) auto minmax(0,1fr) 40px;gap:6px;align-items:center}
+.mk-row .mn{font-size:12px;font-weight:900;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.mk-row input{width:100%;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--card2);padding:8px 10px;font-size:16px;font-weight:600;outline:none;min-width:0}
+.mk-row input.a{border-left:4px solid var(--ca)}
+.mk-row input.b{border-left:4px solid var(--cb)}
+.mk-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.mk-row .vs-s{font-size:11px;font-weight:900;color:var(--muted)}
+.mk-row .mx{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-size:13px}
+.mk-paste{margin-top:10px}
+@media (max-width:420px){
+  .mk-row{grid-template-columns:20px minmax(0,1fr) 40px;grid-template-areas:"n a x" "n b x";row-gap:4px}
+  .mk-row .mn{grid-area:n}
+  .mk-row input.a{grid-area:a}
+  .mk-row input.b{grid-area:b}
+  .mk-row .vs-s{display:none}
+  .mk-row .mx{grid-area:x}
+}
+
+/* ══ 질문 모음 ══ */
+.lcats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.qlist{margin:0;padding:0;list-style:none;counter-reset:q;max-height:540px;overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--card2);overscroll-behavior:contain}
+.qlist li{counter-increment:q;display:grid;grid-template-columns:30px minmax(0,1fr);gap:6px;padding:9px 12px;border-top:1px solid var(--line);font-size:13.5px;font-weight:700;line-height:1.55}
+.qlist li:first-child{border-top:0}
+.qlist li::before{content:counter(q);font-size:12px;font-weight:900;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:1px}
+.qlist .qp{display:block;font-size:11.5px;font-weight:700;color:var(--muted)}
+.qlist .qa{color:var(--ca)} .qlist .qb{color:var(--cb)}
+.qlist .qv{font-size:11px;font-weight:900;color:var(--muted);margin:0 5px}
+
+/* ── 설명 ── */
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{position:relative;padding:0 0 10px 34px;font-size:13.5px;font-weight:600;color:var(--muted);line-height:1.7;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;
+  font-size:12px;font-weight:800;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.steps li b{color:var(--fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0 6px}
+.tbl th,.tbl td{border-top:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top;line-height:1.6}
+.tbl th{white-space:nowrap;font-weight:800;color:var(--fg);width:26%}
+.tbl td{color:var(--muted);font-weight:600}
+.tbl td b{color:var(--fg)}
+.tbl tr:first-child th,.tbl tr:first-child td{border-top:0}
+.tips{margin:0;padding:0;list-style:none}
+.tips li{position:relative;padding:0 0 9px 26px;font-size:13.5px;font-weight:600;color:var(--muted);line-height:1.7}
+.tips li::before{content:attr(data-i);position:absolute;left:0;top:0;font-size:15px}
+.tips li b{color:var(--fg)}
+details.faq{border-top:1px solid var(--line);padding:12px 0}
+details.faq:first-of-type{border-top:0}
+details.faq summary{cursor:pointer;font-weight:700;font-size:14px;list-style:none;padding:10px 0;margin:-10px 0}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"＋ ";color:var(--accent);font-weight:800}
+details.faq[open] summary::before{content:"－ "}
+details.faq p{margin:8px 0 0;font-size:13.5px;color:var(--muted);line-height:1.8}
+details.faq p b{color:var(--fg)}
+.nbx{border:1px solid var(--warn);border-radius:14px;background:var(--warnbg);padding:14px 15px;margin-top:14px}
+.nbx-h{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:800;color:var(--warn);margin:0 0 10px}
+.nbx-h .ic{flex:0 0 auto;width:19px;height:19px;border-radius:6px;background:var(--warn);color:var(--warnbg);
+  font-size:12px;font-weight:800;display:grid;place-items:center;line-height:1}
+.nbx ul{list-style:none;margin:0;padding:0}
+.nbx li{position:relative;padding-left:12px;margin-bottom:7px;font-size:12px;font-weight:600;line-height:1.68;color:var(--warn)}
+.nbx li:last-child{margin-bottom:0}
+.nbx li::before{content:"·";position:absolute;left:1px;top:-1px;font-weight:800}
+.nbx li b{font-weight:800}
+.nbx .nbx-f{margin:11px 0 0;padding-top:10px;border-top:1px solid color-mix(in srgb,var(--warn) 32%,transparent);
+  font-size:12px;font-weight:700;line-height:1.72;color:var(--warn)}
+
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px;line-height:1.8}
+footer b{color:var(--fg)}
+#toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:#17142b;color:#fff;font-size:13.5px;
+  font-weight:700;line-height:1.5;padding:10px 16px;border-radius:14px;width:max-content;opacity:0;pointer-events:none;transition:.25s;z-index:300;
+  max-width:92vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-color-scheme:dark){#toast{background:#ece9f8;color:#150f33}}
+
+@media (max-width:520px){
+  .card{padding:13px}
+  .gcard{padding:13px}
+  .tag{font-size:13.5px}
+  .badges{display:none}
+  .mode{min-height:104px;padding:10px 4px}
+  .mode b{font-size:13.5px}
+  .mode small{font-size:11px}
+  .ch{min-height:122px}
+  .ch .ct{font-size:19px}
+}
+@media (max-width:360px){
+  .modes{gap:6px}
+  .mode small{display:none}
+  .mode{min-height:84px}
+  .seg button{min-width:44px;padding:4px 6px}
+  .meter{width:150px;height:150px}
+  .meter b{font-size:38px}
+}
+@media print{#anchor,.ad-slot,.ad-lab,.iabar{display:none !important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗
+     ║  광고 자리 ① 맨 위 · 320×50 (모바일·PC 같은 크기)                     ║
+     ║  단위 ID 는 스크립트 아래쪽 AD.units 한 곳에서 바꿉니다.               ║
+     ║  ID 가 DAN-XXXX 그대로면 점선 자리만 그리고 광고 요청은 보내지 않습니다 ║
+     ║  모바일 ① 맨 위 ③ 결과 카드 ④ 하단 오버형                            ║
+     ║  PC     ① 맨 위 ② 옆 칸 위 ③ 결과 카드                               ║
+     ║  고르는 화면은 연달아 누르는 곳이라 바로 옆·바로 아래에는 광고를 두지 않습니다 ║
+     ╚══════════════════════════════════════════════════════════════════════╝ -->
+<div class="ad-slot ad-top" id="ad-top"></div>
+
+<!-- 네이버·카카오 앱 안에서 열렸을 때만 보이는 띠 (body.inapp)
+     게임과 링크 보내기는 앱 안에서도 되므로 화면을 막지 않는다. 결과 이미지 저장만 막힐 수 있다 -->
+<div class="iabar" id="iabar">
+  <div class="ia-t"><span id="iaMsg">앱 안에서는 결과 이미지 저장이 막힐 수 있어요.</span>
+    <small id="iaSub">게임과 링크 보내기는 여기서도 됩니다.</small></div>
+  <button class="ia-go" id="iaGo" type="button">크롬에서 열기</button>
+  <button class="ia-x" id="iaX" type="button" aria-label="안내 닫기">✕</button>
+</div>
+
+<header>
+  <h1 class="logo"><span class="ico" aria-hidden="true"><i>A</i><i>B</i></span><span>밸런스 게임</span></h1>
+  <p class="tag">둘 중 <b>하나만</b> 고르세요 — 질문 <b id="tagTotal">265</b>개 · 친구와 <b>몇 % 통하는지</b> · 모임 진행 · <b>직접 만들기</b></p>
+  <div class="badges">
+    <span class="badge">🔒 가입·설치 없음 · 답은 서버로 안 보냄</span>
+    <span class="badge gray">커플 · 친구 궁합</span>
+    <span class="badge gray">회식 · MT · 교실</span>
+    <span class="badge gray">무료</span>
+  </div>
+</header>
+
+<div class="layout">
+<div class="colm">
+
+<section class="card gcard" id="gameCard" data-scr="setup" aria-label="밸런스 게임">
+
+  <!-- ── 고르기 전: 방식 · 주제 · 문제 수 ── -->
+  <div class="scr" id="scrSetup">
+    <div class="recv hide" id="recvBox"></div>
+
+    <div class="sblk" id="blkMode">
+      <h2><span><span class="n">1</span>누구랑 하나요?</span></h2>
+      <div class="modes" id="modes" role="radiogroup" aria-label="게임 방식">
+        <button class="mode" type="button" role="radio" data-mode="solo"><span class="mi" aria-hidden="true">🙋</span><b>혼자 풀기</b><small>다 풀고 친구에게 링크로 보내 비교</small></button>
+        <button class="mode" type="button" role="radio" data-mode="pair"><span class="mi" aria-hidden="true">💞</span><b>둘이 번갈아</b><small>한 휴대폰으로 커플·친구 궁합</small></button>
+        <button class="mode" type="button" role="radio" data-mode="party"><span class="mi" aria-hidden="true">🎉</span><b>여럿이 모임</b><small>회식·MT·교실에서 손 든 사람 세기</small></button>
+      </div>
+      <div class="mopt" id="optPair">
+        <div class="names">
+          <label class="fld"><span>먼저 하는 사람</span><input id="n1" type="text" maxlength="10" placeholder="나" autocomplete="off" enterkeyhint="next"></label>
+          <span class="heart" aria-hidden="true">💞</span>
+          <label class="fld"><span>같이 하는 사람</span><input id="n2" type="text" maxlength="10" placeholder="너" autocomplete="off" enterkeyhint="done"></label>
+        </div>
+        <label class="chk"><input type="checkbox" id="optHide" checked><span>번갈아 고를 때 <b>앞사람 답 가리기</b> (넘겨주기 화면)</span></label>
+      </div>
+      <div class="mopt" id="optParty">
+        <div class="orow"><span class="olab">시간 제한</span>
+          <div class="seg" id="timers" role="radiogroup" aria-label="시간 제한">
+            <button type="button" role="radio" data-t="0">없음</button><button type="button" role="radio" data-t="5">5초</button><button type="button" role="radio" data-t="10">10초</button><button type="button" role="radio" data-t="15">15초</button>
+          </div>
+        </div>
+        <label class="chk"><input type="checkbox" id="optTally" checked><span>손 든 사람 <b>수 세기</b> — 카드를 누를 때마다 1명씩</span></label>
+      </div>
+    </div>
+
+    <div class="sblk" id="blkCat">
+      <h2><span><span class="n">2</span>어떤 질문으로?</span><span class="hint" id="catSum"></span></h2>
+      <div class="cats" id="cats"></div>
+    </div>
+
+    <div class="sblk" id="blkCount">
+      <h2><span><span class="n">3</span>몇 문제?</span></h2>
+      <div class="seg wide" id="counts" role="radiogroup" aria-label="문제 수">
+        <button type="button" role="radio" data-c="5">5</button><button type="button" role="radio" data-c="10">10</button><button type="button" role="radio" data-c="20">20</button><button type="button" role="radio" data-c="30">30</button><button type="button" role="radio" data-c="0">전부</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="optShuffle" checked><span>순서 섞기</span></label>
+    </div>
+
+    <button class="btn pri go" id="btnStart" type="button">▶ 시작하기</button>
+    <p class="small center" id="setupNote"></p>
+  </div>
+
+  <!-- ── 고르는 중 ── -->
+  <div class="scr" id="scrPlay">
+    <div class="pl-top">
+      <span class="pl-cat" id="plCat"></span>
+      <span class="pl-num" id="plNum"></span>
+      <button class="btn sm ghost" id="btnBig" type="button" aria-label="크게 보기">⛶ 크게</button>
+    </div>
+    <div class="pbar" aria-hidden="true"><i id="plBar"></i></div>
+    <div class="timer hide" id="plTimer" aria-hidden="true"><i id="plTimerBar"></i><span id="plTimerTx"></span></div>
+    <div class="who hide" id="plWho"></div>
+    <p class="pq" id="plQ"></p>
+    <div class="choices" id="choices">
+      <button class="ch ca" id="chA" type="button"><span class="cl">A</span><span class="ct" id="chAt"></span><span class="cm" id="chAm"></span></button>
+      <span class="vs" aria-hidden="true">VS</span>
+      <button class="ch cb" id="chB" type="button"><span class="cl">B</span><span class="ct" id="chBt"></span><span class="cm" id="chBm"></span></button>
+    </div>
+    <div class="tminus hide" id="tMinus">
+      <button class="btn sm" id="mA" type="button">A −1</button>
+      <span class="thint">카드를 누를 때마다 손 든 사람 +1</span>
+      <button class="btn sm" id="mB" type="button">B −1</button>
+    </div>
+    <p class="verdict hide" id="plVerdict" aria-live="polite"></p>
+    <div class="pl-foot">
+      <button class="btn" id="btnPrev" type="button">← 이전</button>
+      <button class="btn" id="btnSkip" type="button">넘기기</button>
+      <button class="btn pri hide" id="btnNext" type="button">다음 →</button>
+      <button class="btn" id="btnQuit" type="button">그만</button>
+    </div>
+    <div class="quit hide" id="quitBox">
+      <p id="quitMsg">여기서 멈출까요?</p>
+      <div class="btns">
+        <button class="btn pri" id="qRes" type="button">여기까지 결과 보기</button>
+        <button class="btn" id="qBack" type="button">처음 화면으로</button>
+        <button class="btn" id="qCont" type="button">계속하기</button>
+      </div>
+    </div>
+    <div class="cover hide" id="cover" role="dialog" aria-modal="false" aria-labelledby="coverT">
+      <div class="cv-in">
+        <div class="cv-ic" aria-hidden="true">📱</div>
+        <p class="cv-t" id="coverT"></p>
+        <p class="cv-s" id="coverS">앞사람이 고른 답은 가려 두었어요</p>
+        <button class="btn pri go" id="coverGo" type="button">준비됐어요</button>
+      </div>
+    </div>
+    <p class="sr" id="plLive" aria-live="polite"></p>
+  </div>
+
+  <!-- ── 다 고른 뒤 ── -->
+  <div class="scr" id="scrResult">
+    <div id="resHead"></div>
+    <div id="resShare"></div>
+    <h3 class="rh" id="resListH">고른 답</h3>
+    <ol class="rlist" id="resList"></ol>
+    <div class="btns" id="resBtns">
+      <button class="btn pri" id="btnPng" type="button">🖼️ 결과 이미지 저장</button>
+      <button class="btn" id="btnAgain" type="button">🔁 같은 질문 다시</button>
+      <button class="btn" id="btnNew" type="button">🆕 새 게임</button>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="makeCard" aria-labelledby="makeH">
+  <h2><span id="makeH"><span class="n">4</span>질문 직접 만들기</span><span class="hint" id="mkCnt">0개</span></h2>
+  <p class="tx">우리끼리만 아는 질문을 넣어 보세요. <b>이 기기에 자동 저장</b>되고, 링크로 보내면 받은 사람도 같은 질문으로 할 수 있어요. 위 「어떤 질문으로?」에 <b>✏️ 내가 만든 질문</b>이 생겨 다른 주제와 섞을 수도 있습니다.</p>
+  <label class="fld full"><span>게임 이름 (선택)</span><input id="mkTitle" type="text" maxlength="30" placeholder="예: 우리 반 밸런스 게임" autocomplete="off"></label>
+  <div class="mk-rows" id="mkRows"></div>
+  <div class="btns">
+    <button class="btn" id="mkAdd" type="button">＋ 질문 한 줄 더</button>
+    <button class="btn" id="mkPasteOpen" type="button" aria-expanded="false">📋 여러 줄 한꺼번에</button>
+  </div>
+  <div class="mk-paste hide" id="mkPaste">
+    <label class="fld full"><span>한 줄에 하나씩 · 「vs」나 「/」로 나눠 주세요</span>
+      <textarea id="mkPasteTx" rows="5" placeholder="짜장면 vs 짬뽕&#10;여름 / 겨울&#10;1. 바다 vs 산"></textarea></label>
+    <button class="btn" id="mkPasteGo" type="button">줄마다 나눠 넣기</button>
+  </div>
+  <div class="btns">
+    <button class="btn pri" id="mkPlay" type="button">▶ 내 질문으로 시작</button>
+    <button class="btn" id="mkLink" type="button">🔗 내 질문 링크 보내기</button>
+    <button class="btn" id="mkClear" type="button">모두 지우기</button>
+  </div>
+</section>
+
+<section class="card" id="listCard" aria-labelledby="listH">
+  <h2><span id="listH"><span class="n">5</span>밸런스 게임 질문 모음</span><span class="hint" id="lsCnt"></span></h2>
+  <p class="tx">주제를 누르면 질문이 모두 보입니다. <b>목록 복사</b>로 단톡방·발표 자료에 붙이거나, 그 주제로 바로 시작하세요.</p>
+  <div class="lcats" id="lcats" role="radiogroup" aria-label="질문 주제"></div>
+  <ol class="qlist" id="qlist"></ol>
+  <div class="btns">
+    <button class="btn" id="lsCopy" type="button">📋 이 목록 복사</button>
+    <button class="btn pri" id="lsPlay" type="button">▶ 이 주제로 시작</button>
+  </div>
+</section>
+
+<div class="l-info">
+  <section class="card" id="howCard">
+    <h2><span><span class="n">6</span>하는 법</span></h2>
+    <ol class="steps">
+      <li><b>누구랑 할지</b> 고르세요. 혼자 풀고 친구에게 보내려면 「혼자 풀기」, 옆에 있는 사람과 한 휴대폰으로 하려면 「둘이 번갈아」, 여러 명이 화면 하나를 보면 「여럿이 모임」이에요.</li>
+      <li><b>주제와 문제 수</b>를 고르고 시작합니다. 주제는 여러 개 섞을 수 있고, 순서는 매번 새로 섞여요.</li>
+      <li>두 카드 중 <b>하나를 누르면</b> 다음 질문으로 넘어갑니다. 정말 못 고르겠으면 「넘기기」, 잘못 눌렀으면 「이전」. PC는 키보드 <b>← →</b>(또는 1 · 2)로도 고를 수 있어요.</li>
+      <li>다 고르면 결과가 나옵니다. 혼자 풀었다면 <b>「친구에게 링크 보내기」</b>를 눌러 카톡으로 보내세요. 친구가 같은 질문을 풀고 나면 <b>둘이 몇 % 같은지</b>와 엇갈린 질문이 나와요.</li>
+    </ol>
+    <table class="tbl">
+      <tr><th>혼자 풀기</th><td>내 답이 담긴 <b>도전장 링크</b>를 보냅니다. 받은 사람은 내 답을 못 본 채로 풀고, 끝나면 둘의 결과가 함께 보여요. 그 결과를 다시 링크로 돌려보낼 수 있습니다.</td></tr>
+      <tr><th>둘이 번갈아</th><td>한 질문을 두 사람이 차례로 고르고 <b>바로 맞춰 봅니다</b>. 「앞사람 답 가리기」를 켜 두면 휴대폰을 넘길 때 앞사람 답이 가려져요. 먼저 고르는 사람은 질문마다 바뀝니다.</td></tr>
+      <tr><th>여럿이 모임</th><td>질문을 크게 띄우고 손 든 사람 수를 카드에 눌러 셉니다. 끝나면 <b>가장 팽팽했던 질문</b>과 한쪽으로 쏠린 질문이 나와요. 시간 제한(5 · 10 · 15초)도 걸 수 있습니다.</td></tr>
+    </table>
+  </section>
+
+  <section class="card" id="partyCard">
+    <h2><span><span class="n">7</span>모임 · 회식 · MT에서 진행하는 요령</span></h2>
+    <ul class="tips">
+      <li data-i="📺">노트북을 TV · 빔프로젝터에 연결하고 질문 화면 오른쪽 위 <b>⛶ 크게</b>를 누르면 질문만 화면 가득 나옵니다. 스페이스바로 다음 질문, Esc로 돌아와요.</li>
+      <li data-i="✋">「셋, 둘, 하나」에 <b>동시에 손을 들게</b> 하면 눈치 보기가 줄어요. 한쪽을 든 사람만 세서 카드를 누르고, 나머지는 반대쪽 카드에 셉니다.</li>
+      <li data-i="🗣️">소수파가 된 사람에게 <b>고른 이유를 한마디</b>씩 듣는 것만으로 분위기가 확 살아납니다. 벌칙보다 이유 말하기가 덜 부담스러워요.</li>
+      <li data-i="⏱️">처음엔 「시간 제한 없음」으로 몸을 풀고, 익숙해지면 <b>5초</b>로 줄여 보세요. 고민할 틈이 없을수록 진짜 취향이 나옵니다.</li>
+      <li data-i="🎯">처음 만난 자리는 <b>음식 · 일상 · 상상</b> 주제가 무난하고, 친한 사이는 <b>매운맛</b>, 아이들과는 <b>순한맛</b>이 잘 맞아요. 직장 모임에서는 연애 질문을 빼 두는 편이 편합니다.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="tipCard">
+    <h2><span><span class="n">8</span>재미있는 질문을 만드는 요령</span></h2>
+    <ul class="tips">
+      <li data-i="⚖️"><b>양쪽 무게를 비슷하게</b> — 한쪽이 너무 좋거나 너무 나쁘면 다들 같은 쪽을 골라 금방 끝나요. 고르는 데 3초 넘게 걸리는 질문이 좋은 질문입니다.</li>
+      <li data-i="🔍"><b>구체적으로</b> — 「돈 vs 시간」보다 「월급 많은데 여행 못 감 vs 월급 적은데 두 달 휴가」처럼 장면이 떠오르게 쓰면 훨씬 재밌어요.</li>
+      <li data-i="🎭"><b>우리끼리 아는 소재</b> — 반 친구들만 아는 급식 메뉴, 팀만 아는 회의 습관을 넣으면 반응이 커집니다.</li>
+      <li data-i="🙅">특정 사람을 겨냥하거나 <b>외모 · 몸 · 집안 형편</b>을 건드리는 질문, 대답하기 곤란한 사생활 질문은 빼 주세요. 웃자고 한 질문에 누군가는 상처받을 수 있어요.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="faqCard">
+    <h2><span><span class="n">9</span>자주 묻는 질문</span></h2>
+    <details class="faq"><summary>다른 사람들은 몇 %가 골랐는지 볼 수 있나요?</summary>
+      <p>볼 수 없습니다. 이 도구는 <b>고른 답을 어디에도 보내지 않아서</b> 모든 이용자의 선택 비율을 모으지 않아요. 대신 링크를 주고받은 <b>친구와 나</b>, 같은 자리에 있는 <b>모임 사람들</b>끼리 비교할 수 있습니다.</p></details>
+    <details class="faq"><summary>링크를 보내면 내 답이 어디에 저장되나요?</summary>
+      <p>질문 번호와 답은 <b>링크 주소 자체</b>(# 뒤)에 들어 있습니다. 이 부분은 브라우저가 서버로 보내지 않아서 어디에도 저장되지 않아요. 다만 <b>링크를 받은 사람은 누구나</b> 열어 볼 수 있으니, 단톡방에 올릴 때는 그 점을 생각해 주세요.</p></details>
+    <details class="faq"><summary>통한 정도 %는 어떻게 계산하나요?</summary>
+      <p>두 사람이 <b>모두 고른 질문</b> 가운데 같은 쪽을 고른 질문의 비율입니다. 한 사람이라도 「넘기기」 한 질문은 빼고 셉니다. 성격 검사가 아니라 <b>재미로 보는 숫자</b>예요.</p></details>
+    <details class="faq"><summary>질문은 몇 개이고, 계속 늘어나나요?</summary>
+      <p>연애·커플 40, 음식 35, 일상·친구 35, 직장·회식 30, 상상·초능력 30, 돈·인생 30, 순한맛·학교 30, 매운맛·극악 35개로 <b>모두 265개</b>입니다. 모자라면 「질문 직접 만들기」로 얼마든지 더할 수 있어요.</p></details>
+    <details class="faq"><summary>아이들과 해도 괜찮은 질문이 있나요?</summary>
+      <p><b>순한맛·학교</b> 주제는 급식 · 체육 시간 · 소풍처럼 초등학생도 바로 고를 수 있는 질문으로만 모았습니다. 교실에서는 「여럿이 모임」으로 손을 들게 하면 좋아요.</p></details>
+    <details class="faq"><summary>직접 만든 질문은 어디에 저장되나요?</summary>
+      <p>이 브라우저 안(localStorage)에만 저장됩니다. 다른 기기에서 쓰려면 「내 질문 링크 보내기」로 링크를 만들어 그 기기에서 열고, 받은 질문 칸의 「내 질문으로 저장」을 누르세요.</p></details>
+    <details class="faq"><summary>카카오톡 · 네이버 앱 안에서도 되나요?</summary>
+      <p>게임과 링크 보내기는 앱 안에서도 됩니다. 앱 안 화면은 파일 내려받기를 막는 경우가 많아 <b>결과 이미지 저장</b>만 안 될 수 있어요. 그때는 나타난 이미지를 길게 눌러 저장하거나, 위쪽 안내의 단추로 크롬 · 사파리에서 열어 주세요.</p></details>
+  </section>
+
+  <div class="nbx">
+    <div class="nbx-h"><span class="ic">!</span><span>쓰기 전에 확인하세요</span></div>
+    <ul>
+      <li><b>재미로 하는 게임입니다.</b> 통한 정도 %, 모임 집계는 성격 · 궁합 · 관계를 판단하는 검사가 아니며 그런 판단에 쓰면 안 됩니다.</li>
+      <li>링크에는 고른 답이 그대로 들어 있습니다. <b>링크를 받은 사람은 누구나 볼 수 있으니</b> 이름 칸이나 직접 만든 질문에 연락처 · 주소 같은 개인 정보를 쓰지 마세요.</li>
+      <li>대답하기 싫은 질문은 「넘기기」로 건너뛸 수 있습니다. 모임에서는 <b>답을 강요하지 말고</b>, 누군가를 놀리는 데 쓰지 말아 주세요.</li>
+    </ul>
+    <p class="nbx-f">이 도구는 <b>있는 그대로 제공되며</b>, 결과를 믿고 한 결정이나 사용 중 생긴 어떠한 손해에 대해서도 <b>제작자와 운영자는 법적 책임을 지지 않습니다.</b></p>
+  </div>
+</div>
+
+</div>
+
+<aside class="side" id="side">
+  <!-- 광고 자리 ② PC 옆 칸 맨 위 · 320×50 (좁은 화면에서는 숨김) -->
+  <div class="ad-slot" id="ad-side"></div>
+
+  <section class="card pc-only" id="logCard" aria-labelledby="logH">
+    <h2><span id="logH"><span class="n">⚖</span>이번 판</span><span class="hint" id="logSum"></span></h2>
+    <ol class="rlist mini" id="logList"></ol>
+    <p class="empty" id="logEmpty">시작하면 고른 답이 여기에 쌓여요</p>
+  </section>
+
+  <!-- 광고 자리 ③ 결과 카드 · 300×250 — 게임을 다 끝냈을 때만 펼친다(화면을 덮지 않는다) -->
+  <section class="card hide" id="doneCard">
+    <h2><span id="doneTitle">다 골랐어요</span><button class="btn sm" id="doneHide" type="button">닫기</button></h2>
+    <p class="dmsg" id="doneMsg"></p>
+    <ol class="dsteps" id="doneSteps"></ol>
+    <img id="doneImg" class="hide" alt="밸런스 게임 결과 이미지">
+    <p class="dimgnote hide" id="doneImgNote">휴대폰에서는 이미지를 길게 눌러 사진으로 저장할 수도 있습니다</p>
+    <div id="doneAd"><span class="ad-lab">광고</span><div class="ad-slot" id="ad-done"></div></div>
+  </section>
+
+  <section class="card" id="histCard" aria-labelledby="histH">
+    <h2><span id="histH"><span class="n">↺</span>최근 결과 · 이 기기</span><button class="btn sm" id="btnClear" type="button">지우기</button></h2>
+    <div id="histBody"></div>
+  </section>
+</aside>
+</div>
+
+<footer>
+  <b>밸런스 게임</b> · 설치 없이 브라우저에서<br>
+  질문 265개는 이 도구를 위해 새로 쓴 것입니다 · 외부 라이브러리 없음<br>
+  고른 답과 직접 만든 질문은 이 기기에만 저장되며, 링크로 보낼 때만 주소에 담깁니다.
+</footer>
+</div>
+
+<!-- 광고 자리 ④ 하단 오버형 320×50(모바일) — 설명을 읽는 구간에서만 올라오고, 게임 화면·결과 카드·질문 만들기가 보이면 내려가 있습니다 -->
+<div id="anchor"><span class="amk">광고</span><div class="ad-slot" id="ad-anchor"></div>
+  <button class="axl" id="anchorX" type="button" aria-label="광고 닫기">✕</button></div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+/* ════════════════════════════════════════════════════════════
+   밸런스 게임 — 라이브러리 없이 순수 JS, 서버 없이 이 파일 하나로
+   질문: 주제 8가지 265개(j01) + 직접 만든 질문(이 기기에 저장, j05)
+   방식: 혼자 풀기 → 링크로 친구와 비교 / 둘이 한 휴대폰으로 번갈아 / 여럿이 손 든 사람 세기(j03)
+   링크: 질문 번호와 답을 주소의 # 뒤에 담는다 — # 뒤는 서버로 전송되지 않는다(j02)
+   결과: 같은 답 비율·주제별 선택·모임 집계, 결과 이미지 PNG(j04)
+   ════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   질문 — 주제마다 「앞말|A|B」 한 줄. 앞말이 비면 「둘 중 하나만 고른다면?」
+   ※ 질문 번호(주제 글자 + 두 자리 순번, 예 L06)가 링크 주소에 들어간다.
+     이미 보낸 링크가 깨지지 않게 새 질문은 각 주제 끝에만 붙이고, 중간 질문을 지우거나 순서를 바꾸지 않는다.
+   ※ 질문은 이 도구를 위해 새로 쓴 것이다. 특정인·외모 비하·성적인 내용은 넣지 않는다.
+   ════════════════════════════════════════════════════════════ */
+const CATS = [
+  { k: 'L', name: '연애·커플', ico: '💕' },
+  { k: 'F', name: '음식', ico: '🍗' },
+  { k: 'D', name: '일상·친구', ico: '☕' },
+  { k: 'W', name: '직장·회식', ico: '💼' },
+  { k: 'S', name: '상상·초능력', ico: '✨' },
+  { k: 'M', name: '돈·인생', ico: '💰' },
+  { k: 'K', name: '순한맛·학교', ico: '🎒' },
+  { k: 'H', name: '매운맛·극악', ico: '🔥' }
+];
+const CAT_U = { k: 'U', name: '내가 만든 질문', ico: '✏️' };
+const CAT_R = { k: 'R', name: '받은 질문', ico: '📩' };
+const RAW = {
+L: [
+  '|연락은 자주 하는 애인|연락은 뜸해도 만나면 최선인 애인',
+  '|내 친구와 너무 친한 애인|내 친구를 은근히 싫어하는 애인',
+  '데이트 비용은?|매번 정확히 반반|번갈아 가며 한 사람이 다',
+  '|기념일마다 꼭 챙기는 애인|기념일은 잊어도 평소에 잘하는 애인',
+  '싸운 날은?|그날 바로 풀어야 잠이 온다|하루쯤 각자 생각할 시간이 필요하다',
+  '애인이 내 친구의 깻잎을 떼 준다면?|그 정도는 매너|그건 선 넘었다',
+  '|하루 종일 집 데이트|하루 종일 바깥 데이트',
+  '|휴대폰 비밀번호 서로 공유|휴대폰은 각자의 영역',
+  '|내 생일을 깜빡한 애인|깜짝 이벤트를 하다 크게 망친 애인',
+  '|전 애인과 친구로 지내는 애인|내 전 애인을 계속 궁금해하는 애인',
+  '|매일 짧게 만나기|일주일에 한 번 길게 만나기',
+  '|첫눈에 반한 사람|오래 알다가 좋아진 사람',
+  '|나를 더 좋아하는 사람과 연애|내가 더 좋아하는 사람과 연애',
+  '|우리 사진을 SNS에 자주 올리는 애인|연애 사실을 SNS에 전혀 안 올리는 애인',
+  '|질투가 많은 애인|질투가 하나도 없는 애인',
+  '|말로 표현을 잘하는 애인|행동으로 보여 주는 애인',
+  '|취향이 나와 똑같은 애인|정반대라 새로운 걸 알려 주는 애인',
+  '|애인의 흑역사 사진 보기|내 흑역사 사진 애인에게 들키기',
+  '데이트 코스는?|늘 내가 다 짠다|늘 애인이 짜는데 내 취향과 안 맞는다',
+  '|요리를 잘하는 애인|정리·청소를 잘하는 애인',
+  '|잠버릇이 심한 애인|코골이가 심한 애인',
+  '|커플티 맞춰 입기|커플 아이템은 반지 하나면 충분',
+  '친구 모임에는?|애인도 같이 데려간다|친구 모임은 각자 따로',
+  '|이모티콘 폭탄 답장|마침표까지 찍는 단정한 답장',
+  '|읽고 답이 없는 애인|아예 안 읽는 애인',
+  '고백은?|내가 먼저 한다|상대가 먼저 해 주길 기다린다',
+  '|싸울 때 말이 빨라지는 애인|싸울 때 입을 꾹 닫는 애인',
+  '|애인 부모님과 첫 식사|애인 친구들과 첫 모임',
+  '선물은?|비싼 선물 한 번|작은 선물 자주',
+  '|손편지|깜짝 영상 편지',
+  '|여행 계획이 꼼꼼한 애인|즉흥 여행을 좋아하는 애인',
+  '|1년 내내 연애 초반 설렘|처음부터 10년 차 같은 편안함',
+  '|애인의 과거를 다 알기|과거는 묻지도 말하지도 않기',
+  '|취미가 하나도 안 겹치는 애인|취미가 다 겹쳐 늘 붙어 있는 애인',
+  '|게임에 푹 빠진 애인|운동에 푹 빠진 애인',
+  '|새벽 2시에 「자?」 연락하는 애인|아침 6시에 모닝콜 하는 애인',
+  '|같은 회사 사내 연애|같은 동네 이웃 연애',
+  '데이트 사진은?|매번 100장씩 찍는다|한 장도 안 찍는다',
+  '|친구를 나보다 자주 만나는 애인|친구 없이 나만 만나는 애인',
+  '|멀리 살지만 다정한 연애|가까이 살지만 자주 다투는 연애'
+],
+F: [
+  '탕수육은?|부어 먹는다(부먹)|찍어 먹는다(찍먹)',
+  '|평생 라면 금지|평생 치킨 금지',
+  '민트초코는?|치약 맛이어도 맛있다|치약을 왜 먹어요',
+  '붕어빵은?|머리부터 먹는다|꼬리부터 먹는다',
+  '중국집에서는?|짜장면|짬뽕',
+  '냉면은?|물냉면|비빔냉면',
+  '|평생 밥만 먹기|평생 빵만 먹기',
+  '순대는?|소금에 찍어 먹기|쌈장에 찍어 먹기',
+  '콩국수에는?|설탕|소금',
+  '계란프라이는?|노른자까지 익힌 완숙|노른자가 흐르는 반숙',
+  '붕어빵 속은?|팥|슈크림',
+  '피자 끝 빵은?|남김없이 먹는다|남긴다',
+  '떡볶이 떡은?|밀떡|쌀떡',
+  '삼겹살은?|바싹 구워서|촉촉하게',
+  '|엄청 맛있는데 양이 적은 집|그럭저럭인데 양이 많은 집',
+  '|1시간 줄 서는 맛집|바로 들어가는 무난한 집',
+  '|평생 매운 음식 금지|평생 단 음식 금지',
+  '한겨울에도?|아이스 아메리카노|따뜻한 아메리카노',
+  '김밥은?|꽁다리가 제일 맛있다|가운데만 먹고 싶다',
+  '치킨은?|후라이드|양념',
+  '|평생 국물 없는 식사|평생 반찬 없는 식사',
+  '라면 면발은?|꼬들꼬들|푹 퍼진 면',
+  '평생 과일 하나만 먹는다면?|딸기|수박',
+  '고기를 다 먹고 나서는?|냉면|볶음밥',
+  '오늘 저녁 둘 중 하나만?|회|고기',
+  '카레는?|처음부터 다 비벼 먹는다|조금씩 덜어 비벼 먹는다',
+  '치킨 한 마리, 먼저 집는 건?|다리|날개',
+  '오늘 야식은?|마라탕|떡볶이',
+  '쌀국수 고수는?|듬뿍 넣는다|빼 주세요',
+  '아침은?|밥을 꼭 먹는다|커피 한 잔이면 끝',
+  '|1시간 무제한 뷔페|3시간 코스 요리',
+  '|평생 최애 메뉴 하나만|매일 메뉴가 무작위(고를 수 없음)',
+  '|편의점 도시락 매일|직접 요리 매일(설거지 포함)',
+  '팥빙수는?|처음부터 다 섞는다|위에서부터 떠먹는다',
+  '라면 끓일 때?|계란을 넣는다|아무것도 안 넣는다'
+],
+D: [
+  '좋아하는 계절은?|여름|겨울',
+  '|아침형 인간|저녁형 인간',
+  '|약속에 30분 늦는 친구|30분 일찍 와서 재촉하는 친구',
+  '여행은?|계획을 꼼꼼히|발길 닿는 대로',
+  '휴가는?|산|바다',
+  '|휴대폰 배터리가 늘 10%|휴대폰 인터넷이 늘 느림',
+  '|단톡방 안 읽은 알림 999개|단톡방에서 나만 몰랐던 약속',
+  '주말 충전은?|집에서 뒹굴며|밖에서 놀며',
+  '|친구는 많지만 얕은 관계|친구는 적지만 깊은 관계',
+  '연락은?|전화가 편하다|문자가 편하다',
+  '같이 살 반려동물은?|고양이|강아지',
+  '|비 오는 날|눈 오는 날',
+  '노래방에서는?|마이크 잡고 노래|탬버린 담당',
+  '영화관 자리는?|맨 앞줄 한가운데|맨 뒷줄 구석',
+  '알람은?|5분 간격으로 10개|딱 1개',
+  '|매일 같은 옷 입기|매일 코디 고민하기',
+  '친구가 큰돈을 빌려 달라면?|일단 빌려준다|정중하게 거절한다',
+  '내 생일은?|크게 파티|조용히 보내기',
+  '사진 찍을 때?|찍히는 쪽|찍어 주는 쪽',
+  '여행 경비는?|숙소에 투자|먹는 데 투자',
+  '|버스|지하철',
+  '드라마는?|완결 나면 한 번에 정주행|매주 한 편씩 기다리며',
+  '머리는?|자기 전에 감는다|아침에 감는다',
+  '프로필 사진은?|자주 바꾼다|몇 년째 그대로',
+  '이불은?|매일 개고 나간다|어차피 다시 누울 거 안 갠다',
+  '운동은?|아침에|저녁에',
+  '청소는?|주말에 몰아서 대청소|매일 조금씩',
+  '메시지 답장은?|보자마자 바로|몰아서 한 번에',
+  '|혼밥 고수|혼밥은 절대 못 함',
+  '자기 전에?|영상 보다 잠든다|음악 들으며 잠든다',
+  '|손글씨 다이어리|휴대폰 메모',
+  '|공포 영화|로맨스 영화',
+  '|친구 집들이에 초대받기|우리 집에 친구 초대하기',
+  '길을 잃었을 때?|지도 앱만 믿는다|지나가는 사람에게 묻는다',
+  '쇼핑은?|직접 가서 보고 산다|무조건 온라인'
+],
+W: [
+  '|연봉 높고 야근 많은 회사|연봉 낮고 칼퇴하는 회사',
+  '회식은?|고깃집 2차까지|점심 한 끼로 끝',
+  '|매일 재택근무|출근하지만 회사가 집 앞 5분',
+  '|일은 잘하는데 말이 많은 동료|조용한데 실수가 잦은 동료',
+  '상사는?|친구처럼 편한 상사|선을 딱 지키는 상사',
+  '점심은?|동료들과 같이|혼자 조용히',
+  '|주 4일 하루 10시간|주 5일 하루 8시간',
+  '연차는?|몰아서 긴 여행|쪼개서 자주 쉬기',
+  '업무 지시는?|메신저로|전화로',
+  '|월급 한 달에 한 번|주급으로 매주',
+  '회의는?|짧게 자주|길게 가끔',
+  '|매일 정장 출근|매일 회사 유니폼',
+  '|승진은 빠른데 책임이 큼|승진은 느린데 마음이 편함',
+  '|퇴근 뒤 가끔 업무 연락|퇴근 뒤 연락 0, 대신 월급 10% 적음',
+  '자리는?|상사 바로 앞 창가 자리|아무도 안 보는 구석 자리',
+  '회식에서?|노래 한 곡|건배사 한마디',
+  '|1년 내내 바쁜 부서|1년 내내 한가한 부서',
+  '출근길은?|1시간 앉아서|30분 서서',
+  '|성과급 크게 한 번|매달 월급 조금씩 더',
+  '|사장님이 매일 순찰|사장님 얼굴 한 번도 못 봄',
+  '|엑셀 장인 동료|분위기 메이커 동료',
+  '칭찬은?|모두 앞에서|조용히 따로',
+  '|워크숍 1박 2일|당일치기 단체 등산',
+  '일은?|내 업무만 확실히|이것저것 다 경험',
+  '|키보드 소리가 큰 옆자리|혼잣말이 많은 옆자리',
+  '회의 때?|매번 발표 담당|매번 회의록 담당',
+  '|사내 동호회 열심히|회사에서는 일만',
+  '반차를 쓴다면?|월요일 오전|금요일 오후',
+  '|신입 교육 담당|회사 행사 진행 담당',
+  '|점심 2시간, 퇴근 1시간 늦게|점심 30분, 퇴근 30분 일찍'
+],
+S: [
+  '|하늘을 나는 능력|순간 이동 능력',
+  '|투명 인간 되기|남의 생각 읽기',
+  '|과거로 한 번 가 보기|미래를 한 번 보기',
+  '|세상 모든 언어 하기|세상 모든 악기 연주하기',
+  '|동물과 대화하기|식물을 마음대로 키우기',
+  '|3시간만 자도 쌩쌩|하루 한 끼만 먹어도 든든',
+  '|시간 10초 멈추기|시간 10초 되돌리기',
+  '|평생 20살 얼굴|평생 20살 체력',
+  '|원하는 꿈 골라 꾸기|꿈 없이 푹 자기',
+  '1년 동안 산다면?|무인도|우주 정거장',
+  '|내 인생이 영화로 나옴|내 인생이 책으로 나옴',
+  '|공룡 시대 여행|100년 뒤 미래 여행',
+  '|노래 실력 최고|춤 실력 최고',
+  '|거짓말을 알아채는 능력|거짓말이 절대 안 들키는 능력',
+  '|텔레파시로 대화|하루 한 번 말한 대로 이뤄짐',
+  '|물속에서 숨쉬기|불 속에서도 안 뜨겁기',
+  '|좋아하는 게임 속으로 들어가기|좋아하는 만화 속으로 들어가기',
+  '|어디로든 열리는 내 방문|끝없이 들어가는 내 가방',
+  '|세계 어디든 공짜 비행기|전국 어디든 공짜 택시',
+  '하루만 해 본다면?|다른 사람과 몸 바꾸기|동물로 변신하기',
+  '|엄청난 행운|엄청난 두뇌',
+  '|외계인 친구|유령 친구',
+  '|내 그림자가 따로 움직임|거울 속 내가 말을 걺',
+  '|걷는 곳마다 꽃이 핌|웃을 때마다 무지개가 뜸',
+  '|모두가 내 말을 믿음|모두가 내 편을 들어 줌',
+  '|하루가 30시간|1년이 400일',
+  '|로봇 비서|하루 한 번 쓰는 마법 지팡이',
+  '어디에 산다면?|바다 밑 집|구름 위 집',
+  '|투명 망토|날아다니는 양탄자',
+  '|모든 문제의 답이 보임|모든 길의 지름길이 보임'
+],
+M: [
+  '|로또 1등 한 번|평생 매달 300만 원',
+  '|지금 바로 1억|10년 뒤에 5억',
+  '|좋아하는 일로 월 200|싫어하는 일로 월 600',
+  '|도심의 작은 집|교외의 넓은 집',
+  '|돈은 많은데 시간이 없음|시간은 많은데 돈이 없음',
+  '|유명해지기|아무도 모르는 부자 되기',
+  '|일찍 은퇴해 검소하게|늦게까지 일하고 넉넉하게',
+  '하나만 고른다면?|좋은 차|좋은 집',
+  '|월급 많은데 여행 못 감|월급 적은데 1년에 두 달 휴가',
+  '|기억 그대로 인생 처음부터 다시|지금 인생 그대로 10억',
+  '쇼핑할 때?|최저가를 끝까지 찾는다|비싸도 바로 산다',
+  '평생 무료 이용권?|영화관|놀이공원',
+  '|매일 1만 원 줍기|1년에 한 번 300만 원 줍기',
+  '|큰 회사의 작은 톱니바퀴|작은 회사의 핵심 멤버',
+  '|혼자 세계 일주 1년|친구들과 국내 여행 10번',
+  '|지금 아는 걸 고등학생 때 알기|고등학생 때 체력을 지금 갖기',
+  '|가족 곁에 살기|원하는 도시에서 혼자 살기',
+  '|결과는 좋은데 과정이 힘듦|과정은 즐거운데 결과는 그저 그럼',
+  '|매달 정해진 월급|들쑥날쑥하지만 평균은 더 많은 수입',
+  '|평생 한 직장|3년마다 이직',
+  '돈을 쓴다면?|경험에 쓴다|물건에 쓴다',
+  '|공부 잘하는 능력|사람 잘 사귀는 능력',
+  '|남들이 부러워하는 삶|남들은 몰라도 내가 만족하는 삶',
+  '|빚 없이 월세|대출 끼고 내 집',
+  '|인생 최고의 1년 다시 살기|앞으로의 1년 미리 보기',
+  '|큰돈 한 번에 쓰는 행복|작은 돈 자주 쓰는 행복',
+  '|똑똑한데 게으른 나|평범한데 부지런한 나',
+  '|1년 동안 쇼핑 금지|1년 동안 외식 금지',
+  '나이 들어서는?|시골 텃밭 있는 집|도시 아파트',
+  '용돈은?|기입장에 꼼꼼히|쓰고 싶을 때 쓴다'
+],
+K: [
+  '방학 숙제는?|첫날 다 끝낸다|마지막 날 몰아서',
+  '급식 반찬은?|돈가스|떡볶이',
+  '체육 시간에는?|피구|축구',
+  '짝꿍은?|매달 바뀐다|1년 내내 같은 짝꿍',
+  '|시험 없는 학교|숙제 없는 학교',
+  '누가 더 셀까?|사자|호랑이',
+  '좋아하는 계절은?|봄|가을',
+  '비 오는 날?|우산 쓰고 걷기|장화 신고 물웅덩이 첨벙',
+  '놀이공원에서?|롤러코스터|회전목마',
+  '아이스크림은?|콘|컵',
+  '|동물원|수족관',
+  '소풍 도시락은?|김밥|샌드위치',
+  '|피아노 배우기|태권도 배우기',
+  '가족 여행은?|캠핑|호텔',
+  '주말 아침에?|늦잠 자기|일찍 일어나 만화 보기',
+  '|받아쓰기 100점|달리기 1등',
+  '키우고 싶은 동물은?|햄스터|거북이',
+  '생일 선물은?|장난감|용돈',
+  '놀이터에서?|그네|미끄럼틀',
+  '눈 오는 날?|눈사람 만들기|눈싸움',
+  '|공룡 박물관|우주 과학관',
+  '미술 시간에?|그림 그리기|종이접기',
+  '|형·언니가 있기|동생이 있기',
+  '|책 읽기|퍼즐 맞추기',
+  '물놀이는?|수영장|바다',
+  '비밀 기지는?|나무 위|땅속',
+  '하루만 해 본다면?|담임 선생님|교장 선생님',
+  '간식은?|젤리|초콜릿',
+  '더 기다려지는 날은?|운동회 날|소풍 날',
+  '|산타 할아버지 만나기|요정 만나기'
+],
+H: [
+  '|1년 내내 장마|1년 내내 폭염',
+  '|1년 동안 휴대폰 없이 살기|1년 동안 친구 못 만나기',
+  '|생각이 머리 위에 자막으로 뜸|혼잣말이 전부 확성기로 나옴',
+  '|평생 찬물 샤워만|평생 머리는 일주일에 한 번만',
+  '|매일 아침 기상나팔 알람|매일 밤 옆집 노래방 소리',
+  '|노래 한 곡만 평생 반복|평생 음악 못 듣기',
+  '|신발 속 모래가 영원히|옷 속 라벨이 영원히 따끔',
+  '|세상에서 가장 매운 고추 한 개|세상에서 가장 쓴 약 한 컵',
+  '|기억 없이 10년 전으로|10년 늙고 10억 받기',
+  '|와이파이 없는 고급 호텔|와이파이 빵빵한 텐트',
+  '|내 검색 기록 전체 공개|내 사진첩 전체 공개',
+  '|짝사랑 고백 문자를 단톡방에 잘못 보내기|상사 흉본 문자를 상사에게 보내기',
+  '|평생 한쪽 양말만 젖어 있음|평생 휴대폰 화면 금 간 채로',
+  '|모기 한 마리 있는 방에서 자기|바퀴벌레 한 마리 있는 방에서 자기',
+  '|하루 종일 딸꾹질|하루 종일 재채기 나올 듯 말 듯',
+  '|평생 모든 음식이 순한맛|평생 모든 음식이 아주 매운맛',
+  '|말할 때마다 웃음 효과음|걸을 때마다 삑삑 소리',
+  '|한겨울에 반팔|한여름에 패딩',
+  '|1년 동안 같은 옷|1년 동안 같은 메뉴',
+  '|모두가 나에게 반말|가족까지 모두가 나에게 극존칭',
+  '|30층을 계단으로만 다니는 집|화장실이 1층 공용인 집',
+  '|시험 전날 정전|시험 당일 늦잠',
+  '|1년 동안 초록 머리|1년 동안 눈썹 없음',
+  '|모르는 사람과 엘리베이터에 1시간 갇히기|전 애인과 한 테이블에서 1시간',
+  '|콧물 줄줄인데 휴지 없음|배고픈데 지갑 없음',
+  '|평생 손톱 못 깎음|평생 머리 못 자름',
+  '|소리 없는 공포 영화|화면 없는 공포 영화',
+  '친구 결혼식에서?|축가 부르기|사회 보기',
+  '|하루 30분 아무 때나 투명해짐|하루 30분 아무 때나 노래가 터져 나옴',
+  '|보내는 문자마다 오타 하나씩|보내는 문자가 1시간 늦게 도착',
+  '|매일 꿈에서 시험 보기|매일 꿈에서 지각하기',
+  '|평생 이어폰 한쪽만 들림|평생 충전선 길이 20cm',
+  '|기억력 2배, 나쁜 기억도 2배|기억력 절반, 좋은 기억만 남음',
+  '약속 장소에?|매번 1시간 일찍 도착|매번 10분 늦게 도착',
+  '|내 인생에 배경 음악이 깔림(모두 들림)|내 인생에 해설이 깔림(모두 들림)'
+]
+};
+/* 질문 표 — QMAP[번호] = { id, c(주제), p(앞말), a, b } */
+const QMAP = {}, QBY = {};
+CATS.forEach(c => {
+  QBY[c.k] = RAW[c.k].map((s, i) => {
+    const f = s.split('|');
+    const q = { id: c.k + String(i + 1).padStart(2, '0'), c: c.k, p: f[0], a: f[1], b: f[2] };
+    QMAP[q.id] = q;
+    return q;
+  });
+});
+const Q_TOTAL = Object.keys(QMAP).length;
+const CAT_OF = k => CATS.find(c => c.k === k) || (k === 'U' ? CAT_U : CAT_R);
+
+/* ════════════════════════════════════════════════════════════
+   공통 — 도우미 · 저장(이 기기) · 링크 주소 만들기/읽기
+   ════════════════════════════════════════════════════════════ */
+const $ = id => document.getElementById(id);
+const pad = n => (n < 10 ? '0' : '') + n;
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let toastT = 0;
+function toast(msg, ms) {
+  const t = $('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), ms || 2800);
+}
+function onScreen(el, m) {
+  if (!el || el.classList.contains('hide')) return false;
+  const r = el.getBoundingClientRect(), k = m || 0;
+  return r.height > 0 && r.bottom > k && r.top < window.innerHeight - k;
+}
+const UA = navigator.userAgent || '';
+const IS_IOS = /iPhone|iPad|iPod/i.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IN_FRAME = window.top !== window.self;
+const SITE = 'https://hwj-hub.github.io/balance_game/';
+const KEY = 'balance_game.v1';
+const NAME_MAX = 10, TXT_MAX = 40, TITLE_MAX = 30, CUSTOM_MAX = 50;
+/* 사람이 넣은 글자는 줄바꿈·제어 문자를 빼고 길이를 자른다 — 링크로 받은 글자도 같은 길을 지난다 */
+function clean(s, max) {
+  return String(s == null ? '' : s).replace(/[\x00-\x1f\x7f]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max);
+}
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+  return a;
+}
+/* 이름을 안 적었으면 「친구」 — 「친구님」처럼 어색하게 붙지 않게 호칭은 따로 */
+const nameOr = (n, d) => n || d || '친구';
+/* 조사도 함께: hon('길동','이/가') → 길동님이, hon('','이/가') → 친구가 */
+const hon = (n, j) => {
+  const base = n ? n + '님' : '친구';
+  if (!j) return base;
+  const p = j.split('/');
+  return base + (n ? p[0] : p[1]);
+};
+function stamp(t) {
+  const d = new Date(t);
+  return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+}
+
+/* ── 이 기기에 저장 ── 설정 · 직접 만든 질문 · 최근 결과 */
+const ST = {
+  set: { mode: 'solo', cats: ['L', 'F', 'D', 'S'], count: 10, shuffle: true, n1: '', n2: '', hide: true, timer: 0, tally: true, me: '' },
+  custom: { title: '', rows: [] },
+  hist: []
+};
+function loadStore() {
+  try {
+    const o = JSON.parse(localStorage.getItem(KEY) || '{}');
+    if (o.set && typeof o.set === 'object') {
+      const s = o.set, d = ST.set;
+      if (['solo', 'pair', 'party'].includes(s.mode)) d.mode = s.mode;
+      if (Array.isArray(s.cats)) { const c = s.cats.filter(k => QBY[k] || k === 'U'); if (c.length) d.cats = c; }
+      if ([5, 10, 20, 30, 0].includes(s.count)) d.count = s.count;
+      d.shuffle = s.shuffle !== false;
+      d.hide = s.hide !== false;
+      d.tally = s.tally !== false;
+      if ([0, 5, 10, 15].includes(s.timer)) d.timer = s.timer;
+      d.n1 = clean(s.n1, NAME_MAX); d.n2 = clean(s.n2, NAME_MAX); d.me = clean(s.me, NAME_MAX);
+    }
+    if (o.custom && Array.isArray(o.custom.rows)) {
+      ST.custom.title = clean(o.custom.title, TITLE_MAX);
+      ST.custom.rows = o.custom.rows.slice(0, CUSTOM_MAX).map(r => ({ a: clean(r && r.a, TXT_MAX), b: clean(r && r.b, TXT_MAX) }));
+    }
+    if (Array.isArray(o.hist)) ST.hist = o.hist.filter(h => h && typeof h.t === 'number' && Array.isArray(h.q)).slice(0, 30);
+  } catch (e) { /* 저장된 것이 깨졌으면 처음 상태로 */ }
+}
+function saveStore() {
+  try { localStorage.setItem(KEY, JSON.stringify({ v: 1, set: ST.set, custom: ST.custom, hist: ST.hist.slice(0, 30) })); }
+  catch (e) { /* 저장 공간이 막혀 있으면 이번 화면에서만 */ }
+}
+
+/* ── 직접 만든 질문 → 질문 객체 ── A·B 둘 다 채운 줄만 */
+function customList() {
+  return ST.custom.rows.filter(r => r.a && r.b).map((r, i) => ({ id: 'U' + (i + 1), c: 'U', p: '', a: r.a, b: r.b, custom: true }));
+}
+
+/* ── 링크 ──
+   주소의 # 뒤(조각)에 질문과 답을 담는다. 조각은 브라우저가 서버로 보내지 않아서
+   GitHub 서버 기록에도 남지 않는다. 다만 링크를 받은 사람은 누구나 열어 볼 수 있다.
+   · #p=… 「이 질문으로 해 보세요」(n·a 가 있으면 보낸 사람 답과 비교하는 도전장)
+   · #r=… 둘의 결과(같은 질문 · 두 사람 이름과 답)
+   질문은 들어 있는 것이면 번호(L06)만, 직접 만든 것이면 글자 그대로 [A, B, 앞말] */
+function b64e(str) {
+  const u = new TextEncoder().encode(str);
+  let bin = '';
+  for (let i = 0; i < u.length; i++) bin += String.fromCharCode(u[i]);
+  return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+function b64d(s) {
+  s = String(s).replace(/-/g, '+').replace(/_/g, '/');
+  while (s.length % 4) s += '=';
+  const bin = atob(s), u = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i);
+  return new TextDecoder('utf-8', { fatal: true }).decode(u);
+}
+function qEnc(list) { return list.map(q => q.custom ? (q.p ? [q.a, q.b, q.p] : [q.a, q.b]) : q.id); }
+function qDec(arr) {
+  if (!Array.isArray(arr) || !arr.length || arr.length > 300) return null;
+  const out = [];
+  let u = 0;
+  for (const x of arr) {
+    if (typeof x === 'string') { if (!QMAP[x]) return null; out.push(QMAP[x]); continue; }
+    if (!Array.isArray(x)) return null;
+    const a = clean(x[0], TXT_MAX), b = clean(x[1], TXT_MAX), p = clean(x[2], TXT_MAX);
+    if (!a || !b) return null;
+    out.push({ id: 'R' + (++u), c: 'R', p, a, b, custom: true });
+  }
+  return out;
+}
+const ANS_RE = /^[AB-]*$/;
+function linkOf(kind, obj) { return SITE + '#' + kind + '=' + b64e(JSON.stringify(obj)); }
+/* 주소에서 읽기 — 틀린 것은 조용히 버리고 처음 화면을 보여 준다 */
+function readHash() {
+  const m = /^#([pr])=([A-Za-z0-9_-]+)$/.exec(location.hash || '');
+  if (!m) return null;
+  try {
+    const o = JSON.parse(b64d(m[2]));
+    if (!o || o.v !== 1) return null;
+    const list = qDec(o.q);
+    if (!list) return null;
+    const t = clean(o.t, TITLE_MAX);
+    if (m[1] === 'p') {
+      const a = typeof o.a === 'string' && ANS_RE.test(o.a) && o.a.length === list.length ? o.a : '';
+      return { kind: a ? 'chal' : 'set', list, t, n: clean(o.n, NAME_MAX), a };
+    }
+    const n = Array.isArray(o.n) ? o.n : [], a = Array.isArray(o.a) ? o.a : [];
+    if (typeof a[0] !== 'string' || typeof a[1] !== 'string' || !ANS_RE.test(a[0]) || !ANS_RE.test(a[1]) ||
+        a[0].length !== list.length || a[1].length !== list.length) return null;
+    return { kind: 'res', list, t, n1: clean(n[0], NAME_MAX), n2: clean(n[1], NAME_MAX), a1: a[0], a2: a[1] };
+  } catch (e) { return null; }
+}
+function clearHash() {
+  if (location.hash) { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { location.hash = ''; } }
+}
+
+/* ── 복사 · 보내기 ── */
+function copyText(text, done) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done)); return; }
+  } catch (e) { /* 아래로 */ }
+  fallbackCopy(text, done);
+}
+function fallbackCopy(text, done) {
+  const t = document.createElement('textarea');
+  t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;left:-9999px;top:0';
+  document.body.appendChild(t); t.select(); t.setSelectionRange(0, text.length);
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { /* 무시 */ }
+  t.remove();
+  if (ok) done(); else toast('복사하지 못했어요. 브라우저가 막았을 수 있습니다.');
+}
+/* 휴대폰은 공유 창(카톡·문자 고르기), 안 되면 글과 주소를 복사한다 */
+function sendLink(text, url, okMsg) {
+  const all = text + '\n' + url;
+  if (navigator.share && !IA.on && window.matchMedia('(pointer:coarse)').matches) {
+    navigator.share({ title: '밸런스 게임', text, url }).catch(err => {
+      if (err && err.name === 'AbortError') return;
+      copyText(all, () => toast(okMsg || '링크를 복사했어요. 카톡·문자에 붙여 넣으세요.'));
+    });
+    return;
+  }
+  copyText(all, () => toast(okMsg || '링크를 복사했어요. 카톡·문자에 붙여 넣으세요.', 3600));
+}
+function download(blob, name) {
+  if (IA.on) {
+    const r = new FileReader();
+    r.onload = () => { const a = document.createElement('a'); a.href = r.result; a.download = name; document.body.appendChild(a); a.click(); a.remove(); };
+    r.readAsDataURL(blob);
+    return;
+  }
+  const u = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = u; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(u), 5000);
+}
+
+/* ════════════════════════════════════════════════════════════
+   게임 — 고르기 전(setup) → 고르는 중(play) → 결과(result)
+   · solo  혼자 고른다. 끝나면 내 답이 담긴 도전장 링크를 보낼 수 있다
+   · chal  받은 도전장 — 혼자처럼 고르고, 끝나면 보낸 사람 답과 맞춰 본다
+   · pair  한 휴대폰으로 둘이 한 질문씩 번갈아(먼저 고르는 사람은 질문마다 바뀜) → 바로 맞춰 보기
+   · party 여럿이 — 카드를 누를 때마다 손 든 사람 +1, 시간 제한 선택
+   답 글자: 'A' · 'B' · '-'(넘김)
+   ════════════════════════════════════════════════════════════ */
+const G = {
+  mode: 'solo', list: [], i: 0, a1: [], a2: [], tl: [], stage: '', title: '',
+  n1: '', n2: '', hide: true, timer: 0, tally: true, ref: null, busyT: 0, tmr: 0, tEnd: 0, fromHist: false, recvRes: null
+};
+let RECV = null;     /* 링크로 받은 것 — {kind:'chal'|'set'|'res', …} */
+const card = () => $('gameCard');
+function setScr(s) { card().dataset.scr = s; adSync(); }
+const nm1 = () => G.n1 || '나';
+const nm2 = () => G.n2 || '너';
+
+/* ── 고르기 전 화면 ─────────────────────────────── */
+function renderSetup() {
+  const s = ST.set;
+  card().dataset.mode = s.mode;
+  document.querySelectorAll('#modes .mode').forEach(b => b.setAttribute('aria-checked', String(b.dataset.mode === s.mode)));
+  document.querySelectorAll('#timers button').forEach(b => b.setAttribute('aria-checked', String(+b.dataset.t === s.timer)));
+  document.querySelectorAll('#counts button').forEach(b => b.setAttribute('aria-checked', String(+b.dataset.c === s.count)));
+  $('optShuffle').checked = s.shuffle; $('optHide').checked = s.hide; $('optTally').checked = s.tally;
+  if (document.activeElement !== $('n1')) $('n1').value = s.n1;
+  if (document.activeElement !== $('n2')) $('n2').value = s.n2;
+  renderCats();
+  const pool = poolList();
+  const n = s.count && s.count < pool.length ? s.count : pool.length;
+  let lab = '▶ 시작하기';
+  if (RECV && RECV.kind === 'set') lab = '▶ 받은 질문 ' + RECV.list.length + '개로 시작';
+  else if (pool.length) lab = '▶ 시작하기 · ' + n + '문제';
+  $('btnStart').textContent = lab;
+  $('btnStart').disabled = !pool.length;
+  const note = s.mode === 'solo' ? '다 풀면 <b>친구에게 링크</b>를 보내 몇 % 같은지 비교할 수 있어요'
+    : s.mode === 'pair' ? '한 질문을 <b>두 사람이 차례로</b> 고르고 바로 맞춰 봅니다'
+    : '질문을 크게 띄우고 <b>손 든 사람 수</b>를 셉니다 · 오른쪽 위 ⛶ 크게';
+  $('setupNote').innerHTML = pool.length ? note : '주제를 하나 이상 골라 주세요';
+}
+function renderCats() {
+  const s = ST.set, cu = customList();
+  const all = CATS.every(c => s.cats.includes(c.k));
+  let h = '<button type="button" class="cat all" data-k="*" aria-pressed="' + all + '">전체 <small>' + Q_TOTAL + '</small></button>';
+  CATS.forEach(c => { h += '<button type="button" class="cat" data-k="' + c.k + '" aria-pressed="' + s.cats.includes(c.k) + '">' + c.ico + ' ' + c.name + ' <small>' + QBY[c.k].length + '</small></button>'; });
+  if (cu.length) h += '<button type="button" class="cat" data-k="U" aria-pressed="' + s.cats.includes('U') + '">' + CAT_U.ico + ' ' + CAT_U.name + ' <small>' + cu.length + '</small></button>';
+  $('cats').innerHTML = h;
+  const pool = poolList();
+  $('catSum').textContent = pool.length ? '질문 ' + pool.length + '개 중에서' : '';
+}
+/* 고른 주제의 질문을 모은다(받은 질문이 있으면 그것만) */
+function poolList() {
+  if (RECV && RECV.kind === 'set') return RECV.list.slice();
+  let out = [];
+  ST.set.cats.forEach(k => { if (QBY[k]) out = out.concat(QBY[k]); });
+  if (ST.set.cats.includes('U')) out = out.concat(customList());
+  return out;
+}
+function pickCat(k) {
+  const s = ST.set;
+  if (k === '*') {
+    const all = CATS.every(c => s.cats.includes(c.k));
+    s.cats = all ? ['L'] : CATS.map(c => c.k).concat(s.cats.includes('U') ? ['U'] : []);
+  } else if (s.cats.includes(k)) {
+    if (s.cats.length > 1) s.cats = s.cats.filter(x => x !== k);
+    else toast('주제는 하나 이상 골라야 해요');
+  } else s.cats = s.cats.concat([k]);
+  saveStore(); renderSetup();
+}
+
+/* ── 받은 링크 안내 ── */
+function renderRecv() {
+  const box = $('recvBox');
+  card().dataset.recv = RECV ? RECV.kind : '';
+  if (!RECV || RECV.kind === 'res') { box.classList.add('hide'); box.innerHTML = ''; return; }
+  const cats = catNames(RECV.list);
+  box.classList.remove('hide');
+  if (RECV.kind === 'chal') {
+    box.innerHTML = '<p class="rv-t">💌 ' + esc(hon(RECV.n, '이/가')) + ' 보낸 밸런스 게임</p>' +
+      '<p class="rv-s">' + (RECV.t ? '<b>' + esc(RECV.t) + '</b> · ' : '') + '<b>' + RECV.list.length + '문제</b> · ' + esc(cats) + '<br>' +
+      '다 풀면 ' + esc(hon(RECV.n, '과/와')) + ' <b>몇 % 같은지</b> 나와요. ' + esc(hon(RECV.n)) + ' 답은 끝날 때까지 가려져 있어요.</p>' +
+      '<label class="fld"><span>내 이름 (결과에 나와요)</span><input id="meName" type="text" maxlength="10" placeholder="나" autocomplete="off" enterkeyhint="go"></label>' +
+      '<button class="btn pri go" id="chalGo" type="button">▶ 도전 시작 · ' + RECV.list.length + '문제</button>' +
+      '<button class="rv-x" id="recvX" type="button">도전은 나중에, 새 게임 하기</button>';
+    $('meName').value = ST.set.me;
+    $('chalGo').addEventListener('click', () => {
+      ST.set.me = clean($('meName').value, NAME_MAX); saveStore();
+      startGame({ mode: 'chal' });
+    });
+    $('meName').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); $('chalGo').click(); } });
+  } else {
+    const own = RECV.list.filter(q => q.custom).length;
+    box.innerHTML = '<p class="rv-t">📩 받은 질문 ' + RECV.list.length + '개' + (RECV.t ? ' · ' + esc(RECV.t) : '') + '</p>' +
+      '<p class="rv-s">아래에서 <b>누구랑 할지</b>만 고르고 시작하세요. 질문은 받은 그대로 ' + RECV.list.length + '개입니다.</p>' +
+      (own ? '<button class="btn sm" id="recvSave" type="button">✏️ 내 질문으로 저장</button> ' : '') +
+      '<button class="rv-x" id="recvX" type="button">받은 질문 말고 새 게임 하기</button>';
+    if (own) $('recvSave').addEventListener('click', () => saveRecvAsCustom());
+  }
+  $('recvX').addEventListener('click', () => { RECV = null; clearHash(); renderRecv(); renderSetup(); });
+}
+function catNames(list) {
+  const seen = [];
+  list.forEach(q => { const c = CAT_OF(q.c); if (!seen.includes(c.name)) seen.push(c.name); });
+  return seen.length > 3 ? seen.slice(0, 3).join(' · ') + ' 외' : seen.join(' · ');
+}
+
+/* ── 시작 ─────────────────────────────────────── */
+function startGame(o) {
+  o = o || {};
+  const s = ST.set;
+  stopTimer();
+  G.fromHist = false;
+  G.recvRes = null;
+  if (o.mode === 'chal') {
+    G.mode = 'chal'; G.list = RECV.list.slice(); G.ref = { n: RECV.n, a: RECV.a };
+    G.title = RECV.t; G.n1 = RECV.n; G.n2 = ST.set.me || '나';
+  } else {
+    G.mode = s.mode; G.ref = null;
+    if (o.list) G.list = o.list.slice();
+    else if (RECV && RECV.kind === 'set') { G.list = RECV.list.slice(); if (s.shuffle) shuffle(G.list); }
+    else {
+      const pool = poolList();
+      if (!pool.length) { toast('주제를 하나 이상 골라 주세요'); return; }
+      if (s.shuffle) shuffle(pool);
+      G.list = s.count ? pool.slice(0, s.count) : pool;
+    }
+    G.title = o.title != null ? o.title : (RECV && RECV.kind === 'set' ? RECV.t : (G.list.every(q => q.c === 'U') ? ST.custom.title : ''));
+    G.n1 = clean(s.n1, NAME_MAX); G.n2 = clean(s.n2, NAME_MAX);
+    if (G.mode === 'solo') G.n1 = clean(s.me, NAME_MAX);
+  }
+  G.hide = s.hide; G.timer = s.timer; G.tally = s.tally;
+  G.flip = o.again ? !G.flip : false;   /* 「같은 질문 다시」는 먼저 고르는 사람을 바꾼다 */
+  G.i = 0; G.a1 = []; G.a2 = []; G.tl = G.list.map(() => [0, 0]);
+  G.stage = G.mode === 'pair' ? 'first' : 'pick';
+  $('quitBox').classList.add('hide');
+  $('doneCard').classList.add('hide');
+  setScr('play');
+  showQ();
+  card().scrollIntoView({ behavior: 'smooth', block: 'start' });
+  renderLog();
+}
+
+/* 질문마다 먼저 고르는 사람 — 짝수 번째는 앞사람, 홀수 번째는 뒷사람 */
+const firstIs1 = () => (G.i + (G.flip ? 1 : 0)) % 2 === 0;
+function curPlayer() {
+  if (G.mode !== 'pair') return 0;
+  const f1 = firstIs1();
+  if (G.stage === 'first') return f1 ? 1 : 2;
+  if (G.stage === 'second' || G.stage === 'cover') return f1 ? 2 : 1;
+  return 0;
+}
+
+/* ── 질문 그리기 ── */
+function showQ() {
+  const q = G.list[G.i], n = G.list.length, c = CAT_OF(q.c);
+  $('plCat').textContent = c.ico + ' ' + c.name + (G.title ? ' · ' + G.title : '');
+  $('plNum').textContent = (G.i + 1) + ' / ' + n;
+  $('plBar').style.width = (G.i / n * 100) + '%';
+  $('plQ').textContent = q.p || '둘 중 하나만 고른다면?';
+  $('chAt').textContent = q.a; $('chBt').textContent = q.b;
+  $('chAm').innerHTML = ''; $('chBm').innerHTML = '';
+  const ch = $('choices');
+  ch.classList.remove('picked', 'reveal', 'ro');
+  $('chA').classList.remove('pick', 'none'); $('chB').classList.remove('pick', 'none');
+  $('plVerdict').classList.add('hide'); $('plVerdict').className = 'verdict hide';
+  $('cover').classList.add('hide');
+  $('tMinus').classList.toggle('hide', !(G.mode === 'party' && G.tally));
+  const who = $('plWho');
+  if (G.mode === 'pair') {
+    const p = curPlayer();
+    who.innerHTML = '<span class="wn">' + esc(p === 1 ? nm1() : nm2()) + '</span> 차례';
+    who.classList.remove('hide');
+  } else who.classList.add('hide');
+  /* 이전 · 넘기기 · 다음 단추 */
+  const solo = G.mode === 'solo' || G.mode === 'chal';
+  $('btnPrev').classList.toggle('hide', !(solo || G.mode === 'party') || G.i === 0);
+  $('btnSkip').classList.toggle('hide', !(solo || (G.mode === 'pair' && G.stage === 'first')));
+  $('btnNext').classList.toggle('hide', G.mode !== 'party');
+  $('btnNext').textContent = G.i === n - 1 ? '결과 보기 →' : '다음 →';
+  if (G.mode === 'party') {
+    if (!G.tally) ch.classList.add('ro');
+    paintTally();
+    startTimer();
+  } else if (solo) {
+    const prev = G.a1[G.i];
+    if (prev === 'A' || prev === 'B') { ch.classList.add('picked'); $(prev === 'A' ? 'chA' : 'chB').classList.add('pick'); }
+  }
+  $('plLive').textContent = (G.i + 1) + '번. ' + (q.p ? q.p + ' ' : '') + 'A ' + q.a + ', B ' + q.b;
+  renderLog();
+}
+
+/* ── 누름 ── */
+function choose(side) {
+  if (card().dataset.scr !== 'play' || G.busyT) return;
+  if (!$('cover').classList.contains('hide') || !$('quitBox').classList.contains('hide')) return;
+  const q = G.list[G.i];
+  if (G.mode === 'party') {
+    if (!G.tally) return;
+    G.tl[G.i][side === 'A' ? 0 : 1]++;
+    paintTally();
+    const el = $(side === 'A' ? 'chA' : 'chB');
+    el.animate && el.animate([{ transform: 'scale(.96)' }, { transform: 'scale(1)' }], { duration: 160 });
+    renderLog();
+    return;
+  }
+  if (G.mode === 'pair') {
+    if (G.stage === 'reveal') return;
+    const p = curPlayer();
+    (p === 1 ? G.a1 : G.a2)[G.i] = side;
+    if (G.stage === 'first') {
+      flash(side, () => {
+        if (G.hide) { G.stage = 'cover'; showCover(); }
+        else { G.stage = 'second'; showQ(); }
+      });
+    } else {
+      flash(side, () => { G.stage = 'reveal'; showReveal(); });
+    }
+    return;
+  }
+  /* solo · chal */
+  G.a1[G.i] = side;
+  flash(side, () => advance());
+  void q;
+}
+/* 고른 카드를 잠깐 보여 주고 넘어간다 — 연달아 두 번 눌리지 않게 그동안은 막는다 */
+function flash(side, then) {
+  const ch = $('choices');
+  ch.classList.add('picked');
+  $('chA').classList.toggle('pick', side === 'A'); $('chB').classList.toggle('pick', side === 'B');
+  G.busyT = setTimeout(() => { G.busyT = 0; then(); }, 260);
+}
+function advance() {
+  if (G.i >= G.list.length - 1) { finish(); return; }
+  G.i++;
+  if (G.mode === 'pair') G.stage = 'first';
+  showQ();
+}
+function skip() {
+  if (G.busyT) return;
+  if (G.mode === 'pair') { G.a1[G.i] = '-'; G.a2[G.i] = '-'; advance(); return; }
+  G.a1[G.i] = '-';
+  advance();
+}
+function prev() {
+  if (G.busyT || G.i === 0) return;
+  stopTimer();
+  G.i--;
+  showQ();
+}
+function next() {
+  if (G.busyT) return;
+  if (G.mode === 'party') { stopTimer(); advance(); return; }
+  if (G.mode === 'pair' && G.stage === 'reveal') advance();
+}
+function showCover() {
+  const p = curPlayer(), who = p === 1 ? nm1() : nm2();
+  $('coverT').textContent = who + '에게 넘겨 주세요';
+  $('coverGo').textContent = who + ' 준비됐어요';
+  $('cover').classList.remove('hide');
+  setTimeout(() => { try { $('coverGo').focus({ preventScroll: true }); } catch (e) { /* 무시 */ } }, 30);
+  adSync();
+}
+function coverGo() {
+  $('cover').classList.add('hide');
+  G.stage = 'second';
+  showQ();
+}
+function showReveal() {
+  const x = G.a1[G.i], y = G.a2[G.i];
+  showQ();
+  const ch = $('choices');
+  ch.classList.add('reveal');
+  const tag = (side) => [x === side ? '<span class="pk">' + esc(nm1()) + '</span>' : '', y === side ? '<span class="pk">' + esc(nm2()) + '</span>' : ''].join('');
+  $('chAm').innerHTML = tag('A'); $('chBm').innerHTML = tag('B');
+  $('chA').classList.toggle('none', x !== 'A' && y !== 'A');
+  $('chB').classList.toggle('none', x !== 'B' && y !== 'B');
+  const v = $('plVerdict');
+  const same = x === y;
+  v.textContent = same ? '통했다! 💞 둘 다 ' + (x === 'A' ? 'A' : 'B') : '엇갈렸다 😆 서로 다른 쪽';
+  v.className = 'verdict ' + (same ? 'same' : 'diff');
+  $('plWho').classList.add('hide');
+  $('btnSkip').classList.add('hide');
+  $('btnNext').classList.remove('hide');
+  $('btnNext').textContent = G.i === G.list.length - 1 ? '결과 보기 →' : '다음 질문 →';
+  $('plLive').textContent = v.textContent;
+  renderLog();
+}
+
+/* ── 모임: 손 든 사람 ── */
+function paintTally() {
+  if (G.mode !== 'party' || !G.tally) { $('chAm').innerHTML = ''; $('chBm').innerHTML = ''; return; }
+  const t = G.tl[G.i];
+  $('chAm').innerHTML = '<span class="cnt">✋ ' + t[0] + '</span>';
+  $('chBm').innerHTML = '<span class="cnt">✋ ' + t[1] + '</span>';
+}
+function minus(i) {
+  const t = G.tl[G.i];
+  if (t[i] > 0) { t[i]--; paintTally(); renderLog(); }
+}
+function startTimer() {
+  stopTimer();
+  const box = $('plTimer');
+  if (G.mode !== 'party' || !G.timer) { box.classList.add('hide'); return; }
+  box.classList.remove('hide', 'end');
+  G.tEnd = performance.now() + G.timer * 1000;
+  const tick = () => {
+    const left = Math.max(0, G.tEnd - performance.now());
+    $('plTimerBar').style.width = (left / (G.timer * 1000) * 100) + '%';
+    $('plTimerTx').textContent = left > 0 ? Math.ceil(left / 1000) + '초' : '⏰ 시간 끝! 손을 들어 주세요';
+    if (left <= 0) { box.classList.add('end'); stopTimer(); }
+  };
+  tick();
+  G.tmr = setInterval(tick, 100);
+}
+function stopTimer() { if (G.tmr) { clearInterval(G.tmr); G.tmr = 0; } }
+
+/* ── 그만 ── */
+function quitOpen() {
+  const done = answeredCount();
+  $('quitMsg').textContent = done ? '지금까지 ' + done + '문제를 골랐어요. 여기서 멈출까요?' : '아직 고른 질문이 없어요. 처음 화면으로 갈까요?';
+  $('qRes').classList.toggle('hide', !done);
+  $('quitBox').classList.remove('hide');
+}
+function answeredCount() {
+  if (G.mode === 'party') return G.i + (G.tl[G.i] && (G.tl[G.i][0] || G.tl[G.i][1]) ? 1 : 0);
+  if (G.mode === 'pair') return G.i + (G.stage === 'reveal' ? 1 : 0);
+  return G.a1.slice(0, G.list.length).filter(x => x).length;
+}
+function quitResult() {
+  stopTimer();
+  const n = G.mode === 'party' ? answeredCount() : G.mode === 'pair' ? answeredCount() : G.a1.length;
+  G.list = G.list.slice(0, Math.max(1, n));
+  G.a1 = G.a1.slice(0, G.list.length); G.a2 = G.a2.slice(0, G.list.length); G.tl = G.tl.slice(0, G.list.length);
+  for (let i = 0; i < G.list.length; i++) { if (!G.a1[i]) G.a1[i] = '-'; if (G.mode === 'pair' && !G.a2[i]) G.a2[i] = '-'; }
+  finish();
+}
+function backToSetup() {
+  stopTimer();
+  exitBig();
+  $('quitBox').classList.add('hide');
+  setScr('setup');
+  renderSetup();
+  renderLog();
+}
+
+/* ── 크게 보기 ── */
+function toggleBig() {
+  const c = card();
+  if (c.classList.contains('big')) { exitBig(); return; }
+  c.classList.add('big'); document.body.classList.add('bigm');
+  $('btnBig').textContent = '✕ 작게';
+  try { if (c.requestFullscreen && !document.fullscreenElement) c.requestFullscreen().catch(() => { /* CSS 로 채운 그대로 */ }); } catch (e) { /* 무시 */ }
+  adSync();
+}
+function exitBig() {
+  const c = card();
+  if (!c.classList.contains('big')) return;
+  c.classList.remove('big'); document.body.classList.remove('bigm');
+  $('btnBig').textContent = '⛶ 크게';
+  try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) { /* 무시 */ }
+  adSync();
+}
+
+/* ── 끝 ── */
+function finish() {
+  stopTimer();
+  exitBig();
+  $('plBar').style.width = '100%';
+  const L = G.list.length;
+  for (let i = 0; i < L; i++) { if (!G.a1[i]) G.a1[i] = '-'; if (G.mode === 'pair' && !G.a2[i]) G.a2[i] = '-'; }
+  G.a1 = G.a1.slice(0, L); G.a2 = G.a2.slice(0, L);
+  addHist();
+  showResult(true);
+}
+
+/* ════════════════════════════════════════════════════════════
+   결과 — 화면 · 이번 판(PC 옆 칸) · 최근 결과(이 기기) · 결과 이미지(PNG)
+   결과 한 벌(R): { m, list, title, t, p1:{n,a}, p2:{n,a}|null, tl:[[A수,B수]]|null, tally }
+     m = solo(혼자) · chal(받은 도전을 푼 결과) · pair(둘이 번갈아) · party(모임) · res(받은 결과 링크)
+     chal·res 의 p1 은 처음 보낸 사람, p2 는 받아서 푼 사람
+   ════════════════════════════════════════════════════════════ */
+const MODE_ICO = { solo: '🙋', chal: '💌', pair: '💞', party: '🎉', res: '📬' };
+const isDuo = R => R.m === 'chal' || R.m === 'pair' || R.m === 'res';
+
+function buildR() {
+  const L = G.list.length, t = Date.now();
+  const base = { m: G.mode, list: G.list.slice(), title: G.title || '', t };
+  if (G.mode === 'solo') return Object.assign(base, { p1: { n: G.n1, a: G.a1.join('') } });
+  if (G.mode === 'chal') return Object.assign(base, { p1: { n: G.ref.n, a: G.ref.a.slice(0, L) }, p2: { n: G.n2, a: G.a1.join('') } });
+  if (G.mode === 'pair') return Object.assign(base, { p1: { n: nm1(), a: G.a1.join('') }, p2: { n: nm2(), a: G.a2.join('') } });
+  return Object.assign(base, { tl: G.tl.map(x => x.slice()), tally: G.tally });
+}
+/* 같은 답 비율 — 둘 다 고른(넘기지 않은) 질문만 센다 */
+function matchOf(R) {
+  let both = 0, same = 0, skip = 0;
+  for (let i = 0; i < R.list.length; i++) {
+    const x = R.p1.a[i], y = R.p2.a[i];
+    if (x === '-' || y === '-' || !x || !y) { skip++; continue; }
+    both++; if (x === y) same++;
+  }
+  return { both, same, diff: both - same, skip, pct: both ? Math.round(same / both * 100) : null };
+}
+const VERDICT = [[100, '혹시 같은 사람? 텔레파시 수준', '🤯'], [80, '척하면 척! 아주 잘 통해요', '💞'], [60, '꽤 잘 맞아요', '😊'],
+  [40, '딱 반반, 서로 배울 게 많아요', '🤝'], [20, '정반대의 매력', '⚡'], [0, '이렇게 다를 수가! 그래서 더 재밌는 사이', '😂']];
+/* plain 이면 그림 문자 없이(결과 이미지용) */
+function verdictOf(p, plain) {
+  if (p == null) return '함께 고른 질문이 없어요';
+  const v = VERDICT.find(r => p >= r[0]);
+  return plain ? v[1] : v[1] + ' ' + v[2];
+}
+function partyStats(R) {
+  let tot = 0, tight = null, lean = null;
+  R.list.forEach((q, i) => {
+    const t = R.tl[i], s = t[0] + t[1];
+    tot += s;
+    if (!s) return;
+    const d = Math.abs(t[0] - t[1]) / s;
+    if (!tight || d < tight.d || (d === tight.d && s > tight.s)) tight = { i, d, s };
+    if (s >= 2 && (!lean || d > lean.d || (d === lean.d && s > lean.s))) lean = { i, d, s };
+  });
+  if (lean && tight && lean.i === tight.i) lean = null;
+  return { tot, tight, lean };
+}
+
+/* ── 한 줄(질문 하나) ── */
+function rowHTML(R, i, mini) {
+  const q = R.list[i];
+  const duo = isDuo(R), party = R.m === 'party';
+  const x = R.p1 ? R.p1.a[i] : '', y = duo ? R.p2.a[i] : '';
+  let mark = '';
+  if (duo) {
+    if (x === '-' || y === '-' || !x || !y) mark = '<span class="mk">넘김</span>';
+    else mark = x === y ? '<span class="mk same">같음</span>' : '<span class="mk diff">다름</span>';
+  } else if (!party && x === '-') mark = '<span class="mk">넘김</span>';
+  const t = party ? R.tl[i] : null, sum = t ? t[0] + t[1] : 0;
+  const box = (side) => {
+    const k = side === 'A' ? 0 : 1;
+    let on = false, tags = '', extra = '';
+    if (duo) {
+      if (x === side) { on = true; tags += '<i class="t1">' + esc(nameOr(R.p1.n, R.m === 'pair' ? '나' : '친구')) + '</i>'; }
+      if (y === side) { on = true; tags += '<i class="t2">' + esc(nameOr(R.p2.n, R.m === 'pair' ? '너' : '나')) + '</i>'; }
+    } else if (party) {
+      if (R.tally) {
+        on = sum > 0 && t[k] >= t[1 - k];
+        extra = '<span class="cn">✋ ' + t[k] + '</span>';
+        tags = '';
+      }
+    } else if (x === side) { on = true; tags = '<i class="t0">✔ 골랐어요</i>'; }
+    const bar = party && R.tally ? '<div class="bar"><i style="width:' + (sum ? Math.round(t[k] / sum * 100) : 0) + '%"></i></div>' : '';
+    return '<div class="op ' + side.toLowerCase() + (on ? ' on' : '') + '">' + extra + esc(side === 'A' ? q.a : q.b) +
+      (tags ? '<div class="tg">' + tags + '</div>' : '') + bar + '</div>';
+  };
+  return '<li><div class="rq"><span class="no">' + (i + 1) + '</span><span>' + esc(q.p || '둘 중 하나만') + '</span>' + mark + '</div>' +
+    '<div class="ro2">' + box('A') + box('B') + '</div></li>';
+}
+
+/* ── 결과 화면 ── */
+function showResult(fresh) {
+  const R = G.R;
+  setScr('result');
+  const L = R.list.length;
+  let head = '', share = '';
+  if (isDuo(R)) {
+    const m = matchOf(R);
+    const n1 = nameOr(R.p1.n, R.m === 'pair' ? '나' : '친구'), n2 = nameOr(R.p2.n, R.m === 'pair' ? '너' : '나');
+    const from = R.m === 'chal' ? '<span class="from">💌 ' + esc(hon(R.p1.n, '이/가')) + ' 보낸 도전</span>'
+      : R.m === 'res' ? '<span class="from">📬 ' + esc(hon(R.p2.n, '이/가')) + ' 보낸 결과</span>' : '';
+    head = '<div class="rhead">' + from +
+      '<div class="meter" style="--p:' + (m.pct || 0) + '"><b>' + (m.pct == null ? '–' : m.pct + '<small>%</small>') + '</b><span>통한 정도</span></div>' +
+      '<div class="pairn"><span class="p1">' + esc(n1) + '</span><span aria-hidden="true">💞</span><span class="p2">' + esc(n2) + '</span></div>' +
+      '<p class="rt">' + esc(verdictOf(m.pct)) + '</p>' +
+      '<p class="rs">' + L + '문제 중 <b>' + m.same + '문제</b> 같은 쪽을 골랐어요' + (m.skip ? ' · 넘긴 질문 ' + m.skip + '개는 빼고 셌어요' : '') + '</p>' +
+      '<div class="rstats"><div class="rst"><span>같은 답</span><b>' + m.same + '</b></div><div class="rst"><span>다른 답</span><b>' + m.diff + '</b></div><div class="rst"><span>넘김</span><b>' + m.skip + '</b></div></div>' +
+      '</div>';
+    if (R.m === 'chal') {
+      share = '<div class="share"><p class="sh-t">📬 ' + esc(hon(R.p1.n)) + '에게 결과 돌려보내기</p>' +
+        '<p class="sh-s">' + esc(hon(R.p1.n, '은/는')) + ' 아직 이 결과를 몰라요. 링크를 보내면 <b>같은 결과 화면</b>이 열려요.</p>' +
+        '<div class="btns"><button class="btn pri" id="shRes" type="button">📬 결과 링크 보내기</button></div></div>';
+    } else if (R.m === 'pair') {
+      share = '<div class="share"><p class="sh-t">🔗 이 결과를 링크로</p>' +
+        '<p class="sh-s">링크를 열면 이 결과 화면이 그대로 나와요. 단톡방에 자랑하거나 나중에 다시 보기 좋아요.</p>' +
+        '<div class="btns"><button class="btn" id="shRes" type="button">🔗 결과 링크 보내기</button></div></div>';
+    } else {
+      share = '<div class="share"><p class="sh-t">⚖️ 나도 다른 친구와 해 보기</p>' +
+        '<p class="sh-s">같은 질문을 혼자 풀고 새 도전장을 만들 수 있어요.</p>' +
+        '<div class="btns"><button class="btn" id="shSolo" type="button">▶ 같은 질문 혼자 풀기</button></div></div>';
+    }
+    $('resListH').textContent = '질문별로 맞춰 보기';
+  } else if (R.m === 'party') {
+    const s = partyStats(R);
+    head = '<div class="rhead"><p class="rt">🎉 모임 결과 · ' + L + '문제</p>' +
+      (R.tally ? '<p class="rs">손 든 사람을 모두 <b>' + s.tot + '번</b> 셌어요</p>' : '<p class="rs">손 든 사람은 세지 않았어요</p>') + '</div>';
+    if (R.tally && s.tight) {
+      const q1 = R.list[s.tight.i], t1 = R.tl[s.tight.i];
+      head += '<div class="hl"><div><b>🤜🤛 가장 팽팽했던 질문</b>' + esc(q1.a) + ' ' + t1[0] + ' : ' + t1[1] + ' ' + esc(q1.b) + '</div>';
+      if (s.lean) { const q2 = R.list[s.lean.i], t2 = R.tl[s.lean.i]; head += '<div><b>👉 한쪽으로 쏠린 질문</b>' + esc(q2.a) + ' ' + t2[0] + ' : ' + t2[1] + ' ' + esc(q2.b) + '</div>'; }
+      head += '</div>';
+    }
+    share = '<div class="share"><p class="sh-t">📋 이번 질문 목록</p><p class="sh-s">단톡방에 붙여 넣어 다음 모임에 다시 써 보세요.</p>' +
+      '<div class="btns"><button class="btn" id="shCopy" type="button">📋 질문 목록 복사</button><button class="btn" id="shSet" type="button">🔗 이 질문 링크 보내기</button></div></div>';
+    $('resListH').textContent = R.tally ? '질문별 손 든 사람' : '이번에 한 질문';
+  } else {
+    const a = (R.p1.a.match(/A/g) || []).length, b = (R.p1.a.match(/B/g) || []).length, k = L - a - b;
+    head = '<div class="rhead"><p class="rt">🎉 ' + L + '문제 다 골랐어요</p>' +
+      '<p class="rs">이제 <b>친구는 몇 % 같을지</b> 링크로 확인해 보세요</p>' +
+      '<div class="rstats"><div class="rst a"><span>A를 고름</span><b>' + a + '</b></div><div class="rst b"><span>B를 고름</span><b>' + b + '</b></div><div class="rst"><span>넘김</span><b>' + k + '</b></div></div></div>';
+    share = '<div class="share"><p class="sh-t">💌 친구는 몇 % 나랑 같을까?</p>' +
+      '<p class="sh-s">내 답이 담긴 <b>도전장 링크</b>를 보냅니다. 친구는 내 답을 못 본 채로 같은 질문을 풀고, 끝나면 <b>둘이 몇 % 같은지</b> 나와요.</p>' +
+      '<label class="fld"><span>내 이름 (친구에게 보여요)</span><input id="shName" type="text" maxlength="10" placeholder="예: 길동" autocomplete="off" enterkeyhint="send"></label>' +
+      '<div class="btns"><button class="btn pri" id="shChal" type="button">💌 친구에게 링크 보내기</button></div></div>';
+    $('resListH').textContent = '내가 고른 답';
+  }
+  $('resHead').innerHTML = head;
+  $('resShare').innerHTML = share;
+  let h = '';
+  for (let i = 0; i < L; i++) h += rowHTML(R, i);
+  $('resList').innerHTML = h;
+  bindShare(R);
+  renderLog();
+  renderHist();
+  if (fresh) {
+    card().scrollIntoView({ behavior: 'smooth', block: 'start' });
+    AD.done(doneTitle(R), doneMsg(R), doneSteps(R));
+  }
+}
+function doneTitle(R) {
+  return R.m === 'party' ? '모임 게임이 끝났어요' : isDuo(R) ? '둘의 결과가 나왔어요' : R.list.length + '문제 다 골랐어요';
+}
+function doneMsg(R) {
+  if (isDuo(R)) { const m = matchOf(R); return m.pct == null ? '함께 고른 질문이 없어요.' : '통한 정도 ' + m.pct + '% · ' + verdictOf(m.pct); }
+  if (R.m === 'party') return R.list.length + '문제를 함께 골랐어요.';
+  return '이제 친구에게 링크를 보내 비교해 보세요.';
+}
+function doneSteps(R) {
+  if (R.m === 'chal') return ['「결과 링크 보내기」로 <b>' + esc(hon(R.p1.n)) + '에게</b> 돌려보내면 같은 결과를 볼 수 있어요.', '엇갈린 질문은 <b>왜 그쪽을 골랐는지</b> 물어보세요. 그게 이 게임의 진짜 재미예요.'];
+  if (isDuo(R)) return ['엇갈린 질문은 <b>왜 그쪽을 골랐는지</b> 서로 물어보세요.', '「같은 질문 다시」로 한 번 더 하면 이번엔 다른 사람이 먼저 고릅니다.'];
+  if (R.m === 'party') return ['가장 팽팽했던 질문으로 <b>고른 이유 한마디씩</b> 들어 보세요.', '「같은 질문 다시」나 다른 주제로 한 판 더 할 수 있어요.'];
+  return ['「친구에게 링크 보내기」를 눌러 카톡 · 문자로 보내세요.', '친구가 다 풀면 <b>둘이 몇 % 같은지</b>와 엇갈린 질문이 나와요.'];
+}
+function bindShare(R) {
+  const nm = $('shName');
+  if (nm) {
+    nm.value = ST.set.me;
+    nm.addEventListener('change', () => { ST.set.me = clean(nm.value, NAME_MAX); saveStore(); });
+    nm.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); $('shChal').click(); } });
+  }
+  const on = (id, f) => { const b = $(id); if (b) b.addEventListener('click', f); };
+  on('shChal', () => {
+    const me = clean($('shName').value, NAME_MAX);
+    ST.set.me = me; saveStore(); R.p1.n = me;
+    const url = linkOf('p', { v: 1, q: qEnc(R.list), n: me, a: R.p1.a, t: R.title || undefined });
+    sendLink((me ? me + '님이' : '친구가') + ' 밸런스 게임 ' + R.list.length + '문제를 보냈어요 ⚖️ 나랑 몇 % 통하는지 풀어 보세요!', url,
+      '도전장 링크를 복사했어요. 카톡 · 문자에 붙여 넣으세요.');
+  });
+  on('shRes', () => {
+    const url = linkOf('r', { v: 1, q: qEnc(R.list), n: [R.p1.n, R.p2.n], a: [R.p1.a, R.p2.a], t: R.title || undefined });
+    const m = matchOf(R);
+    sendLink('밸런스 게임 결과 ⚖️ ' + nameOr(R.p1.n, R.m === 'pair' ? '나' : '친구') + ' 💞 ' + nameOr(R.p2.n, R.m === 'pair' ? '너' : '나') + ' 통한 정도 ' + (m.pct == null ? '–' : m.pct + '%'), url,
+      '결과 링크를 복사했어요. 카톡 · 문자에 붙여 넣으세요.');
+  });
+  on('shSolo', () => { ST.set.mode = 'solo'; saveStore(); RECV = null; clearHash(); startGame({ list: R.list, title: R.title }); });
+  on('shCopy', () => copyText(listText(R.list, R.title || '밸런스 게임 질문'), () => toast('질문 ' + R.list.length + '개를 복사했어요')));
+  on('shSet', () => {
+    const url = linkOf('p', { v: 1, q: qEnc(R.list), t: R.title || undefined });
+    sendLink('밸런스 게임 질문 ' + R.list.length + '개 ⚖️ 이 질문으로 같이 해 봐요!', url);
+  });
+}
+function listText(list, title) {
+  return title + ' (' + list.length + '개)\n' + list.map((q, i) => (i + 1) + '. ' + (q.p ? q.p + ' ' : '') + q.a + ' vs ' + q.b).join('\n') + '\n— ' + SITE;
+}
+
+/* ── 이번 판 (PC 옆 칸) ── 결과 화면이 뜨면 접어서 결과 카드 광고가 위로 올라오게 */
+function renderLog() {
+  const c = $('logCard');
+  const scr = card().dataset.scr;
+  c.classList.toggle('hide', scr === 'result');
+  if (scr !== 'play') { $('logList').innerHTML = ''; $('logEmpty').classList.remove('hide'); $('logSum').textContent = ''; return; }
+  const L = G.list.length;
+  let upto = G.i;
+  if (G.mode === 'party' && G.tl[G.i] && (G.tl[G.i][0] || G.tl[G.i][1])) upto = G.i + 1;
+  if (G.mode === 'pair' && G.stage === 'reveal') upto = G.i + 1;
+  const R = { m: G.mode === 'chal' ? 'solo' : G.mode, list: G.list, tally: G.tally, tl: G.tl,
+    p1: { n: nm1(), a: (G.mode === 'pair' ? G.a1 : G.a1).map(x => x || '-').join('') }, p2: { n: nm2(), a: G.a2.map(x => x || '-').join('') } };
+  if (R.m === 'solo') R.p2 = null;
+  let h = '';
+  for (let i = upto - 1; i >= 0; i--) h += rowHTML(R, i, true);
+  $('logList').innerHTML = h;
+  $('logEmpty').classList.toggle('hide', !!h);
+  $('logEmpty').textContent = '고른 답이 여기에 쌓여요';
+  $('logSum').textContent = upto + ' / ' + L;
+}
+
+/* ── 최근 결과 (이 기기) ── */
+function addHist() {
+  const R = G.R = buildR();
+  pushHist(R);
+}
+function pushHist(R) {
+  const h = { t: R.t, m: R.m, q: qEnc(R.list), ti: R.title || '' };
+  if (R.p1) { h.n1 = R.p1.n; h.a1 = R.p1.a; }
+  if (R.p2) { h.n2 = R.p2.n; h.a2 = R.p2.a; }
+  if (R.tl) { h.tl = R.tl; h.ty = R.tally ? 1 : 0; }
+  const sig = JSON.stringify([h.m, h.q, h.a1, h.a2, h.tl]);
+  ST.hist = ST.hist.filter(x => JSON.stringify([x.m, x.q, x.a1, x.a2, x.tl]) !== sig);
+  ST.hist.unshift(h);
+  ST.hist = ST.hist.slice(0, 30);
+  saveStore();
+}
+function histToR(h) {
+  const list = qDec(h.q);
+  if (!list) return null;
+  const R = { m: h.m, list, title: h.ti || '', t: h.t };
+  const ok = s => typeof s === 'string' && ANS_RE.test(s) && s.length === list.length;
+  if (h.m === 'party') {
+    if (!Array.isArray(h.tl) || h.tl.length !== list.length) return null;
+    R.tl = h.tl.map(x => [Math.max(0, +x[0] || 0), Math.max(0, +x[1] || 0)]); R.tally = !!h.ty;
+    return R;
+  }
+  if (!ok(h.a1)) return null;
+  R.p1 = { n: clean(h.n1, NAME_MAX), a: h.a1 };
+  if (h.m !== 'solo') { if (!ok(h.a2)) return null; R.p2 = { n: clean(h.n2, NAME_MAX), a: h.a2 }; }
+  return R;
+}
+function histLabel(h) {
+  const n = Array.isArray(h.q) ? h.q.length : 0;
+  if (h.m === 'party') return '모임 ' + n + '문제';
+  if (h.m === 'solo') return (h.ti ? h.ti + ' · ' : '') + '혼자 ' + n + '문제';
+  const R = histToR(h);
+  const m = R ? matchOf(R) : { pct: null };
+  return nameOr(h.n1, h.m === 'pair' ? '나' : '친구') + ' 💞 ' + nameOr(h.n2, h.m === 'pair' ? '너' : '나') + ' · ' + (m.pct == null ? '–' : m.pct + '%');
+}
+function renderHist() {
+  const b = $('histBody');
+  if (!ST.hist.length) { b.innerHTML = '<p class="empty">다 끝낸 게임이 여기에 남아요<br>(이 기기에만 저장)</p>'; $('btnClear').classList.add('hide'); return; }
+  $('btnClear').classList.remove('hide');
+  b.innerHTML = '<ul class="hist">' + ST.hist.slice(0, 8).map((h, i) =>
+    '<li><span class="hi" aria-hidden="true">' + (MODE_ICO[h.m] || '⚖️') + '</span><span class="ht">' + esc(histLabel(h)) +
+    '<small>' + stamp(h.t) + '</small></span><button class="btn sm" type="button" data-h="' + i + '">보기</button></li>').join('') + '</ul>';
+}
+function openHist(i) {
+  const h = ST.hist[i];
+  const R = h && histToR(h);
+  if (!R) { toast('이 기록은 열 수 없어요'); return; }
+  stopTimer(); exitBig();
+  G.R = R; G.fromHist = true;
+  showResult(false);
+  card().scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── 결과 이미지 ── 폭 1080, 질문은 10개까지(넘으면 「외 N문제」) */
+const IMG_FONT = '"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif';
+function rr(ctx, l, t, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(l + r, t); ctx.arcTo(l + w, t, l + w, t + h, r); ctx.arcTo(l + w, t + h, l, t + h, r);
+  ctx.arcTo(l, t + h, l, t, r); ctx.arcTo(l, t, l + w, t, r); ctx.closePath();
+}
+function fitLine(ctx, s, w) {
+  if (ctx.measureText(s).width <= w) return s;
+  let lo = 0, hi = s.length;
+  while (lo < hi) { const m = (lo + hi + 1) >> 1; if (ctx.measureText(s.slice(0, m) + '…').width <= w) lo = m; else hi = m - 1; }
+  return s.slice(0, lo) + '…';
+}
+function resultCanvas(R) {
+  const W = 1080, P = 60, MAXR = 10;
+  const rows = Math.min(R.list.length, MAXR), more = R.list.length - rows;
+  const duo = isDuo(R), party = R.m === 'party';
+  const headH = duo ? 560 : 250, rowH = 118, legH = duo ? 54 : 0;   /* legH: 둘이 결과의 「● 이름」 범례 띠 */
+  const H = 210 + headH + rows * rowH + (more ? 56 : 0) + legH + 110;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d');
+  x.fillStyle = '#f3f2fa'; x.fillRect(0, 0, W, H);
+  /* 머리띠 */
+  const g = x.createLinearGradient(0, 0, W, 210); g.addColorStop(0, '#6b4cf6'); g.addColorStop(1, '#9a7bff');
+  x.fillStyle = g; x.fillRect(0, 0, W, 210);
+  x.fillStyle = '#ff5c7a'; rr(x, P, 62, 50, 76, 12); x.fill();
+  x.fillStyle = '#48a0ff'; rr(x, P + 58, 62, 50, 76, 12); x.fill();
+  x.fillStyle = '#fff'; x.font = '900 30px ' + IMG_FONT; x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillText('A', P + 25, 100); x.fillText('B', P + 83, 100);
+  x.textAlign = 'left'; x.font = '900 56px ' + IMG_FONT; x.fillText('밸런스 게임', P + 136, 92);
+  x.font = '700 28px ' + IMG_FONT; x.globalAlpha = .9;
+  const sub = party ? '모임 결과' : duo ? '둘이 몇 % 통했을까' : '내가 고른 답';
+  x.fillText(fitLine(x, sub + (R.title ? ' · ' + R.title : ''), W - P * 2 - 136), P + 138, 146); x.globalAlpha = 1;
+  /* 카드 */
+  const top = 210 + 30;
+  x.fillStyle = '#fff'; rr(x, P - 20, top, W - (P - 20) * 2, headH + rows * rowH + (more ? 56 : 0) + legH + 10, 28); x.fill();
+  x.textAlign = 'center';
+  let y = top + 70;
+  if (duo) {
+    const m = matchOf(R);
+    const cx = W / 2, cy = top + 190, rad = 140;
+    x.lineWidth = 30; x.strokeStyle = '#ece9f8'; x.beginPath(); x.arc(cx, cy, rad, 0, Math.PI * 2); x.stroke();
+    x.strokeStyle = '#6b4cf6'; x.lineCap = 'round';
+    if (m.pct) { x.beginPath(); x.arc(cx, cy, rad, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * m.pct / 100); x.stroke(); }
+    x.fillStyle = '#17142b'; x.font = '900 110px ' + IMG_FONT; x.fillText(m.pct == null ? '–' : m.pct + '%', cx, cy + 4);
+    x.fillStyle = '#5d5975'; x.font = '800 28px ' + IMG_FONT; x.fillText('통한 정도', cx, cy + 82);
+    const n1 = nameOr(R.p1.n, R.m === 'pair' ? '나' : '친구'), n2 = nameOr(R.p2.n, R.m === 'pair' ? '너' : '나');
+    y = top + 400;
+    x.font = '900 40px ' + IMG_FONT;
+    const w1 = x.measureText(n1).width, w2 = x.measureText(n2).width, gap = 70, tw = w1 + gap + w2;
+    x.textAlign = 'left';
+    x.fillStyle = '#f0436a'; x.fillText(n1, cx - tw / 2, y);
+    x.fillStyle = '#6b4cf6'; x.font = '900 34px ' + IMG_FONT; x.textAlign = 'center'; x.fillText('&', cx - tw / 2 + w1 + gap / 2, y);
+    x.font = '900 40px ' + IMG_FONT; x.textAlign = 'left'; x.fillStyle = '#2f7cf6'; x.fillText(n2, cx - tw / 2 + w1 + gap, y);
+    x.textAlign = 'center'; x.fillStyle = '#17142b'; x.font = '800 32px ' + IMG_FONT;
+    x.fillText(verdictOf(m.pct, true), cx, y + 62);
+    x.fillStyle = '#5d5975'; x.font = '700 26px ' + IMG_FONT;
+    x.fillText(R.list.length + '문제 중 ' + m.same + '문제 같은 답' + (m.skip ? ' · 넘김 ' + m.skip : ''), cx, y + 110);
+    y = top + headH;
+  } else if (party) {
+    const s = partyStats(R);
+    x.fillStyle = '#17142b'; x.font = '900 52px ' + IMG_FONT; x.fillText(R.list.length + '문제 함께 골랐어요', W / 2, top + 110);
+    x.fillStyle = '#5d5975'; x.font = '700 28px ' + IMG_FONT;
+    x.fillText(R.tally ? '손 든 사람 모두 ' + s.tot + '번' : '질문 목록', W / 2, top + 180);
+    y = top + headH;
+  } else {
+    const a = (R.p1.a.match(/A/g) || []).length, b = (R.p1.a.match(/B/g) || []).length;
+    x.fillStyle = '#17142b'; x.font = '900 52px ' + IMG_FONT; x.fillText(R.list.length + '문제 다 골랐어요', W / 2, top + 110);
+    x.font = '800 34px ' + IMG_FONT;
+    x.fillStyle = '#f0436a'; x.fillText('A ' + a, W / 2 - 90, top + 190);
+    x.fillStyle = '#2f7cf6'; x.fillText('B ' + b, W / 2 + 90, top + 190);
+    y = top + headH;
+  }
+  /* 질문 줄 */
+  const bw = (W - P * 2 - 16) / 2;
+  for (let i = 0; i < rows; i++) {
+    const q = R.list[i], ry = y + i * rowH;
+    x.textAlign = 'left'; x.fillStyle = '#6b4cf6'; x.font = '900 24px ' + IMG_FONT; x.fillText(String(i + 1), P, ry + 14);
+    x.fillStyle = '#5d5975'; x.font = '700 24px ' + IMG_FONT; x.fillText(fitLine(x, q.p || '둘 중 하나만', W - P * 2 - 50), P + 40, ry + 14);
+    const xa = duo ? R.p1.a[i] : party ? '' : R.p1.a[i], ya = duo ? R.p2.a[i] : '';
+    const t = party ? R.tl[i] : null, sum = t ? t[0] + t[1] : 0;
+    ['A', 'B'].forEach((side, k) => {
+      const bx = P + k * (bw + 16), by = ry + 34, bh = 70;
+      const on = duo ? (xa === side || ya === side) : party ? (R.tally && sum > 0 && t[k] >= t[1 - k]) : xa === side;
+      x.fillStyle = on ? (k ? '#e3eeff' : '#ffe4ea') : '#f4f3fb'; rr(x, bx, by, bw, bh, 16); x.fill();
+      if (on) { x.lineWidth = 3; x.strokeStyle = k ? '#2f7cf6' : '#f0436a'; rr(x, bx, by, bw, bh, 16); x.stroke(); }
+      let tags = '';
+      if (duo) tags = (xa === side ? '●' : '') + (ya === side ? '●' : '');
+      const right = party && R.tally ? String(t[k]) + '명' : '';
+      x.font = (on ? '800 ' : '600 ') + '27px ' + IMG_FONT; x.fillStyle = on ? '#17142b' : '#8a86a3';
+      const tw = bw - 32 - (right ? 70 : 0) - (tags ? 48 : 0);
+      x.fillText(fitLine(x, side === 'A' ? q.a : q.b, tw), bx + 16, by + bh / 2 + 1);
+      if (right) { x.textAlign = 'right'; x.font = '900 27px ' + IMG_FONT; x.fillStyle = k ? '#2f7cf6' : '#f0436a'; x.fillText(right, bx + bw - 16, by + bh / 2 + 1); x.textAlign = 'left'; }
+      if (duo) {
+        let dx = bx + bw - 20;
+        if (ya === side) { x.fillStyle = '#2f7cf6'; x.beginPath(); x.arc(dx, by + bh / 2, 9, 0, Math.PI * 2); x.fill(); dx -= 26; }
+        if (xa === side) { x.fillStyle = '#f0436a'; x.beginPath(); x.arc(dx, by + bh / 2, 9, 0, Math.PI * 2); x.fill(); }
+      }
+    });
+  }
+  if (more) { x.textAlign = 'center'; x.fillStyle = '#5d5975'; x.font = '700 26px ' + IMG_FONT; x.fillText('외 ' + more + '문제', W / 2, y + rows * rowH + 22); }
+  if (duo) {
+    /* 질문 줄(·외 N문제) 바로 아래, 가운데 정렬 */
+    const ly = y + rows * rowH + (more ? 56 : 0) + 16;
+    x.textAlign = 'left'; x.font = '700 24px ' + IMG_FONT;
+    const n1 = nameOr(R.p1.n, R.m === 'pair' ? '나' : '친구'), n2 = nameOr(R.p2.n, R.m === 'pair' ? '너' : '나');
+    const w1 = x.measureText(n1).width, w2 = x.measureText(n2).width, lw = 24 + w1 + 36 + 24 + w2, lx = W / 2 - lw / 2;
+    x.fillStyle = '#f0436a'; x.beginPath(); x.arc(lx + 8, ly, 9, 0, Math.PI * 2); x.fill();
+    x.fillStyle = '#5d5975'; x.fillText(n1, lx + 24, ly + 1);
+    const bx2 = lx + 24 + w1 + 36;
+    x.fillStyle = '#2f7cf6'; x.beginPath(); x.arc(bx2 + 8, ly, 9, 0, Math.PI * 2); x.fill();
+    x.fillStyle = '#5d5975'; x.fillText(n2, bx2 + 24, ly + 1);
+  }
+  x.textAlign = 'center'; x.fillStyle = '#8a86a3'; x.font = '700 24px ' + IMG_FONT;
+  x.fillText('hwj-hub.github.io/balance_game · ' + stamp(R.t || Date.now()).slice(0, 10), W / 2, H - 52);
+  return c;
+}
+function savePng() {
+  const R = G.R;
+  if (!R) return;
+  const c = resultCanvas(R);
+  const d = new Date(R.t || Date.now());
+  const name = '밸런스게임_' + (R.m === 'party' ? '모임' : isDuo(R) ? '궁합' : '내답') + '_' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + '_' + pad(d.getHours()) + pad(d.getMinutes()) + '.png';
+  c.toBlob(b => {
+    if (!b) { toast('이미지를 만들지 못했어요'); return; }
+    download(b, name);
+    toast(IA.on ? '저장을 시도했어요. 안 되면 아래 이미지를 길게 눌러 저장하세요.' : '결과 이미지를 저장했어요');
+    AD.done('결과 이미지를 저장했어요', doneMsg(R), ['단톡방 · SNS에 올릴 때는 <b>함께 한 사람이 괜찮은지</b> 먼저 물어보세요.', '휴대폰에서는 아래 이미지를 길게 눌러 사진으로도 저장할 수 있어요.'], c.toDataURL('image/png'));
+  }, 'image/png');
+}
+
+/* ════════════════════════════════════════════════════════════
+   질문 직접 만들기 · 질문 모음
+   ════════════════════════════════════════════════════════════ */
+function renderMake() {
+  const rows = ST.custom.rows;
+  if (!rows.length) rows.push({ a: '', b: '' }, { a: '', b: '' }, { a: '', b: '' });
+  $('mkRows').innerHTML = rows.map((r, i) =>
+    '<div class="mk-row" data-i="' + i + '"><span class="mn">' + (i + 1) + '</span>' +
+    '<input class="a" type="text" maxlength="' + TXT_MAX + '" placeholder="A ' + (i === 0 ? '예: 바다' : '') + '" aria-label="' + (i + 1) + '번 A" value="' + esc(r.a) + '" autocomplete="off" enterkeyhint="next">' +
+    '<span class="vs-s" aria-hidden="true">vs</span>' +
+    '<input class="b" type="text" maxlength="' + TXT_MAX + '" placeholder="B ' + (i === 0 ? '예: 산' : '') + '" aria-label="' + (i + 1) + '번 B" value="' + esc(r.b) + '" autocomplete="off" enterkeyhint="next">' +
+    '<button class="mx" type="button" aria-label="' + (i + 1) + '번 지우기">✕</button></div>').join('');
+  if (document.activeElement !== $('mkTitle')) $('mkTitle').value = ST.custom.title;
+  mkCount();
+}
+function mkCount() {
+  const n = customList().length;
+  $('mkCnt').textContent = n + '개 완성' + (ST.custom.rows.length > n ? ' · 빈 줄 ' + (ST.custom.rows.length - n) : '');
+  $('mkPlay').disabled = !n; $('mkLink').disabled = !n;
+}
+let mkSaveT = 0;
+function mkInput(e) {
+  const row = e.target.closest('.mk-row');
+  if (!row) return;
+  const i = +row.dataset.i, r = ST.custom.rows[i];
+  if (!r) return;
+  if (e.target.classList.contains('a')) r.a = clean(e.target.value, TXT_MAX);
+  if (e.target.classList.contains('b')) r.b = clean(e.target.value, TXT_MAX);
+  mkCount();
+  clearTimeout(mkSaveT);
+  mkSaveT = setTimeout(() => { saveStore(); if (card().dataset.scr === 'setup') renderSetup(); }, 300);
+}
+function mkAdd(focus) {
+  if (ST.custom.rows.length >= CUSTOM_MAX) { toast('질문은 ' + CUSTOM_MAX + '개까지 만들 수 있어요'); return; }
+  ST.custom.rows.push({ a: '', b: '' });
+  saveStore(); renderMake();
+  if (focus) { const ins = $('mkRows').querySelectorAll('input.a'); const el = ins[ins.length - 1]; if (el) el.focus(); }
+}
+function mkRemove(i) {
+  ST.custom.rows.splice(i, 1);
+  saveStore(); renderMake(); renderSetup();
+}
+/* 붙여넣기 — 「A vs B」 「A / B」 「A | B」 「A 또는 B」, 앞의 번호·글머리표는 뗀다 */
+const SPLIT_RE = /\s+(?:vs\.?|VS\.?|Vs\.?|또는|아니면)\s+|\s*(?:\/|\||↔|⟷)\s*|\s*vs\s*/;
+function parseLines(text) {
+  const out = [];
+  String(text || '').split(/\r?\n/).forEach(line => {
+    let s = line.replace(/^\s*(?:\d{1,3}\s*[.)]|[-•·*▶▷✔☆★]|Q\d*\s*[.:)]?)\s*/, '').trim();
+    if (!s) return;
+    const m = s.split(SPLIT_RE);
+    if (m.length < 2) return;
+    const a = clean(m[0], TXT_MAX), b = clean(m.slice(1).join(' '), TXT_MAX);
+    if (a && b) out.push({ a, b });
+  });
+  return out;
+}
+function mkPaste() {
+  const got = parseLines($('mkPasteTx').value);
+  if (!got.length) { toast('「A vs B」처럼 한 줄에 하나씩 넣어 주세요'); return; }
+  const rows = ST.custom.rows.filter(r => r.a || r.b);
+  const room = CUSTOM_MAX - rows.length;
+  const add = got.slice(0, Math.max(0, room));
+  ST.custom.rows = rows.concat(add);
+  saveStore(); renderMake(); renderSetup();
+  $('mkPasteTx').value = '';
+  toast(add.length + '개를 넣었어요' + (got.length > add.length ? ' · ' + CUSTOM_MAX + '개를 넘는 ' + (got.length - add.length) + '개는 뺐어요' : ''));
+}
+function mkPlay() {
+  const list = customList();
+  if (!list.length) { toast('A와 B를 둘 다 채운 질문이 있어야 해요'); return; }
+  RECV = null; clearHash(); renderRecv();
+  const l = list.slice();
+  if (ST.set.shuffle) shuffle(l);
+  startGame({ list: l, title: ST.custom.title });
+}
+function mkLink() {
+  const list = customList();
+  if (!list.length) { toast('A와 B를 둘 다 채운 질문이 있어야 해요'); return; }
+  const url = linkOf('p', { v: 1, q: qEnc(list), t: ST.custom.title || undefined });
+  sendLink((ST.custom.title ? '「' + ST.custom.title + '」 ' : '') + '밸런스 게임 질문 ' + list.length + '개를 만들었어요 ⚖️ 이 질문으로 같이 해 봐요!', url,
+    '질문 링크를 복사했어요. 카톡 · 문자에 붙여 넣으세요.');
+}
+function mkClear() {
+  if (!customList().length && !ST.custom.title) { renderMake(); return; }
+  if (!window.confirm('직접 만든 질문 ' + customList().length + '개와 게임 이름을 모두 지울까요? 되돌릴 수 없습니다.')) return;
+  ST.custom = { title: '', rows: [] };
+  ST.set.cats = ST.set.cats.filter(k => k !== 'U');
+  if (!ST.set.cats.length) ST.set.cats = ['L'];
+  saveStore(); renderMake(); renderSetup();
+  toast('직접 만든 질문을 지웠어요');
+}
+function saveRecvAsCustom() {
+  if (!RECV) return;
+  const got = RECV.list.filter(q => q.custom).map(q => ({ a: q.a, b: q.b }));
+  const rows = ST.custom.rows.filter(r => r.a || r.b);
+  const have = new Set(rows.map(r => r.a + '|' + r.b));
+  const add = got.filter(r => !have.has(r.a + '|' + r.b)).slice(0, Math.max(0, CUSTOM_MAX - rows.length));
+  ST.custom.rows = rows.concat(add);
+  if (!ST.custom.title && RECV.t) ST.custom.title = RECV.t;
+  saveStore(); renderMake();
+  toast(add.length ? add.length + '개를 「질문 직접 만들기」에 저장했어요' : '이미 저장된 질문이에요');
+}
+
+/* ── 질문 모음 ── */
+let LS_CAT = 'L';
+function renderList() {
+  $('lcats').innerHTML = CATS.map(c => '<button type="button" class="cat" role="radio" data-k="' + c.k + '" aria-pressed="' + (c.k === LS_CAT) + '" aria-checked="' + (c.k === LS_CAT) + '">' +
+    c.ico + ' ' + c.name + ' <small>' + QBY[c.k].length + '</small></button>').join('');
+  const qs = QBY[LS_CAT];
+  $('qlist').innerHTML = qs.map(q => '<li><span>' + (q.p ? '<span class="qp">' + esc(q.p) + '</span>' : '') +
+    '<span class="qa">' + esc(q.a) + '</span><span class="qv">vs</span><span class="qb">' + esc(q.b) + '</span></span></li>').join('');
+  $('lsCnt').textContent = '전체 ' + Q_TOTAL + '개';
+  $('qlist').scrollTop = 0;
+}
+function lsCopy() {
+  const c = CAT_OF(LS_CAT);
+  copyText(listText(QBY[LS_CAT], '밸런스 게임 질문 · ' + c.name), () => toast(c.name + ' 질문 ' + QBY[LS_CAT].length + '개를 복사했어요'));
+}
+function lsPlay() {
+  RECV = null; clearHash(); renderRecv();
+  ST.set.cats = [LS_CAT];
+  saveStore(); renderSetup();
+  startGame();
+}
+
+/* ── 앱 안(WebView) ── 네이버·카카오톡 앱 안 화면은 파일 내려받기(결과 이미지 저장)를 막는 경우가 많다.
+   게임과 링크 보내기는 그대로 되므로 화면을 막지 않고 위쪽에 띠만 띄운다 */
+const IA = {
+  naver: /NAVER\(inapp/i.test(UA),
+  kakao: /KAKAOTALK/i.test(UA),
+  line: /\bLine\//i.test(UA),
+  ios: IS_IOS,
+  android: /Android/i.test(UA)
+};
+IA.on = IA.naver || IA.kakao || IA.line ||
+  /Instagram|FBAN|FBAV|FB_IAB|DaumApps|everytimeApp|band\/|KAKAOSTORY/i.test(UA) ||
+  (IA.android && /;\s*wv\)/i.test(UA));   /* 안드로이드 WebView 표시 */
+/* 크롬을 콕 집어 여는 것은 intent:// 뿐 — 카카오톡·라인은 앱이 정한 기본 브라우저가 열린다 */
+IA.chrome = IA.android && !IA.kakao && !IA.line;
+IA.copyOnly = IA.ios && !IA.kakao && !IA.line;   /* 아이폰(카카오·라인 제외)은 주소 복사로 */
+IA.app = IA.naver ? (/NAVER\(inapp;\s*blog/i.test(UA) ? '네이버 블로그 앱' : '네이버 앱') : IA.kakao ? '카카오톡' : IA.line ? '라인' : '앱';
+IA.label = IA.copyOnly ? '주소 복사' : IA.chrome ? '크롬에서 열기' : '다른 브라우저로 열기';
+function externalUrl() {
+  const url = location.href;
+  if (IA.kakao) return 'kakaotalk://web/openExternal?url=' + encodeURIComponent(url);
+  if (IA.line) { try { const u = new URL(url); u.searchParams.set('openExternalBrowser', '1'); return u.toString(); } catch (e) { return url; } }
+  if (IA.android) return 'intent://' + url.replace(/^https?:\/\//i, '') +
+    '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(url) + ';end';
+  return '';          /* 아이폰은 사파리를 강제로 열 수 없다 */
+}
+function goOut() {
+  const u = externalUrl();
+  if (u) { location.href = u; return; }
+  copyText(location.href, () => toast('주소를 복사했습니다. 사파리를 열고 붙여 넣거나, 화면의 메뉴에서 「다른 브라우저로 열기」를 누르세요.', 4200));
+}
+function initInApp() {
+  if (!IA.on) return;
+  let hidden = false;
+  try { hidden = sessionStorage.getItem('balance_game.iahide') === '1'; } catch (e) { /* 무시 */ }
+  if (!hidden) document.body.classList.add('inapp');
+  $('iaMsg').textContent = IA.app + ' 안에서는 결과 이미지 저장이 막힐 수 있어요.';
+  $('iaSub').textContent = '게임과 링크 보내기는 여기서도 됩니다. 이미지를 저장하려면 ' + (IA.copyOnly ? '주소를 복사해 사파리에서' : '브라우저에서') + ' 열어 주세요.';
+  $('iaGo').textContent = IA.label;
+}
+
+/* ════════════════════════════════════════════════════════════
+   광고 (카카오 애드핏) — 반응속도 테스트(게임형 도구)의 AD 객체를 그대로 옮기고 「핵심 행동 중」 조건만 바꿈
+     · 한 화면 4곳까지(애드핏 운영정책: 한 페이지 4개 초과 게재 금지)
+       모바일 ① 맨 위 320×50 ③ 결과 카드 300×250 ④ 하단 오버형 320×50
+       PC     ① 맨 위 320×50 ② 옆 칸 맨 위 320×50 ③ 결과 카드 300×250
+       본문 320×100 은 두지 않는다 — 카드를 연달아 누르는 게임이라 고르는 화면 바로 아래 광고는 오클릭을 부른다
+     · ins 는 자리마다 다 만든 뒤 ba.min.js 를 맨 끝에 딱 한 번 넣는다
+     · 고르는 화면·결과·질문 만들기가 보이는 동안, 크게 보기·넘겨주기 화면에서는 오버형을 내려 둔다(핵심 행동 중 광고 노출 금지)
+     · 결과 카드는 창으로 덮지 않고 흐름 안에 펼친다(「콘텐츠를 덮거나 가리는 영역에 광고 배치 금지」)
+   ※ 단위 ID 는 애드핏에서 크기별로 따로 발급받아 아래 units 에만 적으면 된다. DAN-XXXX 그대로면 광고를 부르지 않는다.
+     같은 ID 를 두 자리에 쓰면 한 화면에 두 번 노출되어 정책 위반이다.
+   ════════════════════════════════════════════════════════════ */
+const AD = {
+  units: {
+    top:     { id: 'DAN-XXXXXXXXXXXXXXXX', w: 320, h: 50 },   /* 맨 위 · 모바일과 PC 크기가 같아 하나로 겸한다 */
+    side_pc: { id: 'DAN-XXXXXXXXXXXXXXXX', w: 320, h: 50 },   /* PC 옆 칸 맨 위 (좁은 화면에서는 안 뜬다) */
+    done:    { id: 'DAN-XXXXXXXXXXXXXXXX', w: 300, h: 250 },  /* 결과 카드 · 모바일·PC 공통 */
+    anchor:  { id: 'DAN-XXXXXXXXXXXXXXXX', w: 320, h: 50 }    /* 모바일 하단 오버형 (PC 에서는 안 뜬다) */
+  },
+  iframeOk: true,   /* iframe 안에서도 띄운다(다른 도구들과 같게). 끄려면 false */
+  popup: true,      /* 결과 카드 */
+  overlay: true,    /* 하단 오버형 */
+  init() {
+    if (this.started) return;
+    this.started = true;
+    this.off = IN_FRAME && !this.iframeOk;
+    this.pc = window.matchMedia('(min-width:980px)').matches;
+    if (this.off) { document.body.classList.add('no-ad'); return; }
+    this.put($('ad-top'), 'top');
+    if (this.pc) this.put($('ad-side'), 'side_pc');
+    /* 숨어 있는 자리(하단 오버형·결과 카드)는 화면에 나온 다음에 부른다 —
+       안 보이는 동안 부르면 보는 사람 없이 노출만 잡히고, 애드핏도 「노출수를 인위적으로 늘리는 수단」을 금지한다 */
+    this.load();
+  },
+  put(box, key, preload) {
+    const u = this.units[key];
+    if (!box || !u || box.dataset.ad) return;
+    if (document.querySelectorAll('ins.kakao_ad_area').length >= 4) return;
+    box.dataset.ad = key;
+    box.style.width = u.w + 'px';
+    if (/XXXX/.test(u.id)) { box.style.height = u.h + 'px'; box.innerHTML = '<div class="ad-ph">광고 ' + u.w + ' × ' + u.h + '</div>'; return; }
+    box.style.minHeight = u.h + 'px';
+    /* 광고가 안 내려오면 빈 칸이 남는다 — 공식 콜백으로 접는다. 단위가 여럿이면 이름이 서로 달라야 한다 */
+    const fail = 'adNone_' + box.id.replace(/-/g, '_');
+    window[fail] = () => {
+      box.classList.add('ad-none');
+      if (key === 'anchor') { this.closed = true; this.sync(true); }
+      if (key === 'done' && $('doneAd')) $('doneAd').classList.add('ad-none');
+    };
+    const ins = document.createElement('ins');
+    ins.className = 'kakao_ad_area'; ins.style.display = 'none';
+    ins.setAttribute('data-ad-unit', u.id);
+    ins.setAttribute('data-ad-width', String(u.w));
+    ins.setAttribute('data-ad-height', String(u.h));
+    ins.setAttribute('data-ad-onfail', fail);
+    /* preload 를 켜면 애드핏이 「보이는 자리인가」 검사를 건너뛰고 0.7초마다 도는 preload 차례에 그려 넣는다 —
+       방금 펼친 자리를 바로 채우려고 쓴다 */
+    if (preload) ins.setAttribute('data-ad-preload', 'Y');
+    box.appendChild(ins);
+    this.need = true;
+  },
+  show(box, key) {
+    if (this.off || !this.started || !box || box.dataset.ad) return;
+    this.put(box, key, true);
+    this.load();
+    try {
+      const ins = box.querySelector('ins');
+      if (ins && window.adfit && typeof window.adfit.render === 'function') window.adfit.render(ins);
+    } catch (e) { /* 안 되면 0.7초 뒤 preload 차례가 채운다 */ }
+  },
+  load() {
+    if (!this.need || this.loaded) return;
+    this.loaded = true;
+    const s = document.createElement('script');
+    s.type = 'text/javascript'; s.async = true;
+    s.src = 'https://t1.kakaocdn.net/kas/static/ba.min.js';
+    document.body.appendChild(s);
+  },
+  sync(busy) {
+    if (this.off || this.pc || !this.overlay || !this.started) return;
+    const show = !this.closed && !busy && window.scrollY > 320;
+    const was = document.body.classList.contains('anch');
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    $('anchor').classList.toggle('on', show);
+    document.body.classList.toggle('anch', show);
+    /* 이미 맨 아래였으면 늘어난 여백만큼 다시 내려 마지막 줄이 바에 가리지 않게 */
+    if (show && !was && atBottom) window.scrollTo(0, document.documentElement.scrollHeight);
+    if (show) this.show($('ad-anchor'), 'anchor');
+  },
+  /* 게임이 끝나면 결과 카드를 펼친다 — 화면은 옮기지 않는다(마지막 카드를 누르던 손가락 밑으로 광고가 오지 않게).
+     이미지를 저장했을 때(단추를 누른 뒤)만 결과 카드 쪽으로 옮긴다 */
+  done(title, msg, steps, img) {
+    if (!this.popup) return;
+    $('doneTitle').textContent = title;
+    $('doneMsg').textContent = msg;
+    $('doneSteps').innerHTML = (steps || []).map(t => '<li>' + t + '</li>').join('');
+    $('doneImg').classList.toggle('hide', !img);
+    $('doneImgNote').classList.toggle('hide', !img);
+    if (img) $('doneImg').src = img;
+    $('doneCard').classList.remove('hide');
+    if (!this.off) this.show($('ad-done'), 'done');
+    if (img) setTimeout(() => {
+      if (this.pc) { const side = $('side'), c = $('doneCard'); side.scrollTo({ top: Math.max(0, c.offsetTop - 12), behavior: 'smooth' }); }
+      else $('doneCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      adSync();
+    }, 250);
+    else adSync();
+  },
+  hideDone() { if (!$('doneCard').classList.contains('hide')) { $('doneCard').classList.add('hide'); adSync(); } }
+};
+
+/* 하단 오버형을 띄워도 되는가 — 게임 카드·결과 카드·질문 만들기가 보이거나, 크게 보기·입력 중이면 안 된다 */
+function adSync() {
+  if (!AD.started) return;
+  const ae = document.activeElement;
+  const typing = !!(ae && (ae.tagName === 'TEXTAREA' || (ae.tagName === 'INPUT' && !/^(checkbox|radio|button)$/.test(ae.type))));
+  const busy = typing || card().classList.contains('big') || onScreen(card(), 30) || onScreen($('doneCard'), 30) || onScreen($('makeCard'), 30);
+  AD.sync(busy);
+}
+
+/* ════════════════════════════════════════════════════════════
+   시작 · 단추 연결
+   ════════════════════════════════════════════════════════════ */
+function bindSetup() {
+  $('modes').addEventListener('click', e => {
+    const b = e.target.closest('.mode'); if (!b) return;
+    ST.set.mode = b.dataset.mode; saveStore(); renderSetup();
+  });
+  $('timers').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    ST.set.timer = +b.dataset.t; saveStore(); renderSetup();
+  });
+  $('counts').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    ST.set.count = +b.dataset.c; saveStore(); renderSetup();
+  });
+  $('cats').addEventListener('click', e => { const b = e.target.closest('.cat'); if (b) pickCat(b.dataset.k); });
+  $('optShuffle').addEventListener('change', e => { ST.set.shuffle = e.target.checked; saveStore(); });
+  $('optHide').addEventListener('change', e => { ST.set.hide = e.target.checked; saveStore(); });
+  $('optTally').addEventListener('change', e => { ST.set.tally = e.target.checked; saveStore(); });
+  ['n1', 'n2'].forEach(id => $(id).addEventListener('input', e => { ST.set[id] = clean(e.target.value, NAME_MAX); saveStore(); }));
+  $('n1').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); $('n2').focus(); } });
+  $('n2').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); } });
+  $('btnStart').addEventListener('click', () => startGame());
+}
+function bindPlay() {
+  /* 누르는 순간이 아니라 손을 뗀 click 에서 — 화면을 쓸어 스크롤하다 카드가 눌리지 않게 */
+  $('chA').addEventListener('click', () => choose('A'));
+  $('chB').addEventListener('click', () => choose('B'));
+  $('mA').addEventListener('click', () => minus(0));
+  $('mB').addEventListener('click', () => minus(1));
+  $('btnPrev').addEventListener('click', prev);
+  $('btnSkip').addEventListener('click', skip);
+  $('btnNext').addEventListener('click', next);
+  $('btnQuit').addEventListener('click', quitOpen);
+  $('qRes').addEventListener('click', quitResult);
+  $('qBack').addEventListener('click', backToSetup);
+  $('qCont').addEventListener('click', () => $('quitBox').classList.add('hide'));
+  $('coverGo').addEventListener('click', coverGo);
+  $('btnBig').addEventListener('click', toggleBig);
+  document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && card().classList.contains('big')) exitBig(); });
+  /* 키보드 — ← · 1 · A 는 A, → · 2 · B 는 B, 스페이스 · 엔터는 다음, Esc 는 크게 보기 끄기 */
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+    if (card().dataset.scr !== 'play') return;
+    if (e.key === 'Escape') { if (!$('quitBox').classList.contains('hide')) $('quitBox').classList.add('hide'); else exitBig(); return; }
+    if (!$('quitBox').classList.contains('hide')) return;
+    if (!$('cover').classList.contains('hide')) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); coverGo(); }
+      return;
+    }
+    const k = e.key.toLowerCase();
+    if (k === 'arrowleft' || k === '1' || k === 'a') { e.preventDefault(); choose('A'); }
+    else if (k === 'arrowright' || k === '2' || k === 'b') { e.preventDefault(); choose('B'); }
+    else if (k === ' ' || k === 'enter') {
+      /* 아래쪽 단추(이전·다음·그만…)에 초점이 있으면 그 단추가 눌리게 둔다.
+         카드에 초점이 있어도 모임·맞춰 보기 화면에서는 「다음」으로 — 진행자가 스페이스로 넘긴다 */
+      const inCh = !!(t && t.closest && t.closest('#choices'));
+      if (t && t.tagName === 'BUTTON' && !inCh) return;
+      if (G.mode === 'party' || (G.mode === 'pair' && G.stage === 'reveal')) { e.preventDefault(); next(); }
+    }
+  });
+}
+function bindResult() {
+  $('btnPng').addEventListener('click', savePng);
+  $('btnAgain').addEventListener('click', () => {
+    const R = G.R; if (!R) return;
+    if (['solo', 'pair', 'party'].includes(R.m)) ST.set.mode = R.m;
+    saveStore();
+    RECV = null; clearHash(); renderRecv();
+    const l = R.list.slice();
+    if (ST.set.shuffle && R.m !== 'chal' && R.m !== 'res') shuffle(l);
+    startGame({ list: l, title: R.title, again: true });
+  });
+  $('btnNew').addEventListener('click', () => {
+    RECV = null; clearHash(); renderRecv();
+    AD.hideDone();
+    backToSetup();
+    card().scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  $('doneHide').addEventListener('click', () => AD.hideDone());
+  $('histBody').addEventListener('click', e => { const b = e.target.closest('button[data-h]'); if (b) openHist(+b.dataset.h); });
+  $('btnClear').addEventListener('click', () => {
+    if (!ST.hist.length) return;
+    if (!window.confirm('이 기기에 남은 결과 ' + ST.hist.length + '개를 모두 지울까요? 되돌릴 수 없습니다.')) return;
+    ST.hist = []; saveStore(); renderHist(); toast('최근 결과를 지웠어요');
+  });
+}
+function bindMake() {
+  $('mkRows').addEventListener('input', mkInput);
+  $('mkRows').addEventListener('click', e => { const b = e.target.closest('.mx'); if (b) mkRemove(+b.closest('.mk-row').dataset.i); });
+  $('mkRows').addEventListener('keydown', e => {
+    if (e.key !== 'Enter' || e.isComposing) return;
+    const ins = [...$('mkRows').querySelectorAll('input')];
+    const i = ins.indexOf(e.target);
+    if (i < 0) return;
+    e.preventDefault();
+    if (i < ins.length - 1) ins[i + 1].focus(); else mkAdd(true);
+  });
+  $('mkTitle').addEventListener('input', e => { ST.custom.title = clean(e.target.value, TITLE_MAX); clearTimeout(mkSaveT); mkSaveT = setTimeout(saveStore, 300); });
+  $('mkAdd').addEventListener('click', () => mkAdd(true));
+  $('mkPasteOpen').addEventListener('click', () => {
+    const open = $('mkPaste').classList.toggle('hide') === false;
+    $('mkPasteOpen').setAttribute('aria-expanded', String(open));
+    if (open) $('mkPasteTx').focus();
+  });
+  $('mkPasteGo').addEventListener('click', mkPaste);
+  $('mkPlay').addEventListener('click', mkPlay);
+  $('mkLink').addEventListener('click', mkLink);
+  $('mkClear').addEventListener('click', mkClear);
+  $('lcats').addEventListener('click', e => { const b = e.target.closest('.cat'); if (!b) return; LS_CAT = b.dataset.k; renderList(); });
+  $('lsCopy').addEventListener('click', lsCopy);
+  $('lsPlay').addEventListener('click', lsPlay);
+}
+
+function init() {
+  loadStore();
+  $('tagTotal').textContent = Q_TOTAL;
+  bindSetup(); bindPlay(); bindResult(); bindMake();
+  $('anchorX').addEventListener('click', () => { AD.closed = true; AD.sync(true); });
+  $('iaGo').addEventListener('click', goOut);
+  $('iaX').addEventListener('click', () => {
+    document.body.classList.remove('inapp');
+    try { sessionStorage.setItem('balance_game.iahide', '1'); } catch (e) { /* 무시 */ }
+  });
+  initInApp();
+  /* 링크로 열었으면: 도전장·받은 질문은 고르기 전 화면 위에 안내, 결과 링크는 바로 결과 화면 */
+  RECV = readHash();
+  if (location.hash && !RECV) { clearHash(); setTimeout(() => toast('링크가 잘렸거나 바뀌어서 열 수 없어요. 처음 화면을 보여 드려요.', 4200), 300); }
+  renderMake(); renderList(); renderHist();
+  renderRecv(); renderSetup(); renderLog();
+  if (RECV && RECV.kind === 'res') {
+    const R = { m: 'res', list: RECV.list, title: RECV.t, t: Date.now(), p1: { n: RECV.n1, a: RECV.a1 }, p2: { n: RECV.n2, a: RECV.a2 } };
+    G.R = R;
+    pushHist(R);
+    showResult(false);
+  }
+  window.addEventListener('hashchange', () => {
+    const r = readHash();
+    if (!r) {
+      /* 주소창에 깨진 링크를 붙여 넣은 경우 — 새로 열지 않고 해시만 바뀌어도 처음 화면으로 */
+      if (!location.hash) return;
+      RECV = null; clearHash(); stopTimer(); exitBig();
+      renderRecv(); renderSetup(); setScr('setup');
+      toast('링크가 잘렸거나 바뀌어서 열 수 없어요. 처음 화면을 보여 드려요.', 4200);
+      return;
+    }
+    RECV = r; stopTimer(); exitBig();
+    renderRecv(); renderSetup();
+    if (r.kind === 'res') {
+      G.R = { m: 'res', list: r.list, title: r.t, t: Date.now(), p1: { n: r.n1, a: r.a1 }, p2: { n: r.n2, a: r.a2 } };
+      pushHist(G.R); showResult(false);
+    } else setScr('setup');
+    card().scrollIntoView({ block: 'start' });
+  });
+  let st = 0;
+  const later = () => { clearTimeout(st); st = setTimeout(adSync, 80); };
+  window.addEventListener('scroll', later, { passive: true });
+  window.addEventListener('resize', later);
+  document.addEventListener('focusin', later);
+  document.addEventListener('focusout', later);
+  AD.init();
+  adSync();
+}
+init();
+</script>
+</body>
+</html>
